@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadVibe - Your Instant Audio Palette</title>
+    <meta name="description" content="PadVibe is the cross-platform audio pad for podcasters, streamers, and creators who demand speed and reliability.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+
+    <link rel="icon" href="/logo.png" sizes="any">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF2E00">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#FF2E00">
+    <meta name="msapplication-TileColor" content="#FF2E00">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PadVibe - Your Instant Audio Palette">
+    <meta property="og:description" content="PadVibe is the cross-platform audio pad for podcasters, streamers, and creators who demand speed and reliability.">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:image:alt" content="PadVibe app UI preview">
+    <meta property="og:site_name" content="PadVibe">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PadVibe - Your Instant Audio Palette">
+    <meta name="twitter:description" content="PadVibe is the cross-platform audio pad for podcasters, streamers, and creators who demand speed and reliability.">
+    <meta name="twitter:image" content="/og-image.png">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF2E00',
+                        secondary: '#00FF66',
+                        brutBlack: '#000000',
+                        brutWhite: '#FFFFFF',
+                        brutGray: '#AAAAAA',
+                    },
+                    fontFamily: {
+                        mono: ['Space Mono', 'Courier Prime', 'monospace'],
+                        sans: ['Space Mono', 'Courier Prime', 'monospace']
+                    },
+                }
+            },
+            variants: {
+                extend: {},
+            },
+            plugins: [],
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .brutal-border {
+                border: 4px solid #000;
+                box-shadow: 8px 8px 0 #000;
+            }
+            
+            .brutal-border-white {
+                border: 4px solid #FFF;
+                box-shadow: 8px 8px 0 #FFF;
+            }
+            
+            .brutal-border-sm {
+                border: 3px solid #000;
+                box-shadow: 4px 4px 0 #000;
+            }
+
+            .brutal-hover {
+                transition: transform 0.1s ease-in-out;
+            }
+            
+            .brutal-hover:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 10px 10px 0 #000;
+            }
+            
+            .animate-glitch {
+                animation: glitch 1s infinite;
+            }
+            
+            @keyframes glitch {
+                0% { transform: translate(0) }
+                20% { transform: translate(-2px, 2px) }
+                40% { transform: translate(-2px, -2px) }
+                60% { transform: translate(2px, 2px) }
+                80% { transform: translate(2px, -2px) }
+                100% { transform: translate(0) }
+            }
+            
+            .diagonal-stripes {
+                background-image: repeating-linear-gradient(
+                    45deg,
+                    #000,
+                    #000 10px,
+                    #FF2E00 10px,
+                    #FF2E00 20px
+                );
+            }
+            
+            .noise-bg {
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+                background-blend-mode: multiply;
+            }
+        }
+    </style>
+</head>
+<body class="bg-brutWhite text-brutBlack font-mono">
+    <!-- Navigation -->
+    <nav class="bg-brutWhite fixed w-full z-10 border-b-8 border-brutBlack">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="h-10 w-10 bg-primary brutal-border-sm mr-2 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                                <rect x="4" y="4" width="16" height="16" rx="0" ry="0"></rect>
+                                <rect x="8" y="8" width="4" height="4"></rect>
+                                <rect x="12" y="12" width="4" height="4"></rect>
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-bold tracking-wider uppercase">PadVibe</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="flex items-center -mr-2 sm:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 bg-brutBlack text-brutWhite hover:bg-primary focus:outline-none brutal-border-sm">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden sm:flex sm:items-center sm:ml-6 space-x-2">
+                    <a href="#features" class="text-brutBlack px-4 py-2 bg-brutGray brutal-border-sm brutal-hover uppercase font-bold">Features</a>
+                    <a href="#platforms" class="text-brutBlack px-4 py-2 bg-brutGray brutal-border-sm brutal-hover uppercase font-bold">Platforms</a>
+                    <a href="#developers" class="text-brutBlack px-4 py-2 bg-brutGray brutal-border-sm brutal-hover uppercase font-bold">Developers</a>
+                    <a href="#download" class="text-brutBlack px-4 py-2 bg-primary brutal-border-sm brutal-hover uppercase font-bold">Download</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-brutWhite pb-3 border-t-4 border-brutBlack">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#features" class="block px-3 py-2 bg-brutGray text-brutBlack brutal-border-sm my-2 font-bold uppercase">Features</a>
+                <a href="#platforms" class="block px-3 py-2 bg-brutGray text-brutBlack brutal-border-sm my-2 font-bold uppercase">Platforms</a>
+                <a href="#developers" class="block px-3 py-2 bg-brutGray text-brutBlack brutal-border-sm my-2 font-bold uppercase">Developers</a>
+                <a href="#download" class="block px-3 py-2 bg-primary text-brutBlack brutal-border-sm my-2 font-bold uppercase">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-24 px-4 bg-brutWhite">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div class="lg:col-span-3 relative">
+                    <div class="h-8 w-8 bg-secondary absolute -top-4 -left-4 brutal-border-sm"></div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-none text-brutBlack mb-8 uppercase tracking-tight">
+                        Instant Audio, <span class="bg-primary px-2 py-1 brutal-border-sm inline-block mt-2 rotate-1 transform">Flawless Control.</span>
+                    </h1>
+                    <p class="text-xl text-brutBlack mb-8 border-l-8 border-brutBlack pl-4">
+                        PadVibe is the cross-platform audio pad for podcasters, streamers, and creators who demand speed and reliability.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="#download" id="download" class="inline-flex items-center justify-center px-6 py-3 text-base font-bold uppercase bg-primary text-brutBlack brutal-border brutal-hover tracking-wider">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                                <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1.2.5-2 1.5-2 2.8 0 1.5 1.2 2.8 2.7 2.8h14.7c1.5 0 2.8-1.2 2.8-2.8 0-1.3-.8-2.3-2-2.8-.3-1.3-1.4-2.2-2.8-2.2-.5 0-.9.1-1.3.3-.8-2.1-2.9-3.5-5.3-3.5z"></path>
+                                <path d="M12 15v6"></path>
+                                <path d="m9 18 3 3 3-3"></path>
+                            </svg>
+                            Download for macOS
+                        </a>
+                        <a href="#platforms" class="inline-flex items-center justify-center px-6 py-3 text-base font-bold uppercase bg-brutGray text-brutBlack brutal-border brutal-hover tracking-wider">
+                            All Platforms
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 brutal-border bg-secondary p-1 -rotate-2 transform">
+                    <div class="brutal-border-sm bg-brutBlack aspect-[4/3] flex items-center justify-center">
+                        <div class="p-8 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-brutWhite animate-glitch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+                                <rect x="2" y="2" width="20" height="20" rx="0" ry="0"></rect>
+                                <rect x="7" y="7" width="4" height="4"></rect>
+                                <rect x="13" y="7" width="4" height="4"></rect>
+                                <rect x="7" y="13" width="4" height="4"></rect>
+                                <rect x="13" y="13" width="4" height="4"></rect>
+                            </svg>
+                            <p class="text-brutWhite text-lg uppercase font-bold mt-4">PadVibe App UI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24 bg-brutBlack px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-block brutal-border-white bg-primary px-8 py-2 rotate-1 transform">
+                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider">Raw Performance</h2>
+                </div>
+                <p class="text-xl text-brutWhite mt-8 max-w-3xl mx-auto uppercase">Our key features empower your audio workflow with speed and precision.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-4">
+                <!-- Feature 1 -->
+                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform">
+                    <div class="w-12 h-12 bg-primary brutal-border-sm flex items-center justify-center mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                            <path d="M12 19V5"></path>
+                            <path d="M5 12l7-7 7 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Zero-Lag Playback</h3>
+                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2">Powered by the high-performance SoLoud audio engine for critical timing in live environments.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform">
+                    <div class="w-12 h-12 bg-secondary brutal-border-sm flex items-center justify-center mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Effortless Workflow</h3>
+                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2">Simply drag and drop audio files onto pads. No complex setup needed.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform">
+                    <div class="w-12 h-12 bg-primary brutal-border-sm flex items-center justify-center mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Cross-Platform</h3>
+                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2">Designed for macOS, but works seamlessly on Windows, Linux, and your browser.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform">
+                    <div class="w-12 h-12 bg-secondary brutal-border-sm flex items-center justify-center mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                            <polyline points="4 17 10 11 4 5"></polyline>
+                            <line x1="12" y1="19" x2="20" y2="19"></line>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Modern Tech Stack</h3>
+                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2">Built with Flutter, ensuring a smooth and consistent experience across all platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="platforms" class="py-16 md:py-24 px-4 bg-brutWhite">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-block brutal-border bg-secondary px-8 py-2 -rotate-1 transform">
+                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider">A Smoother Workflow</h2>
+                </div>
+                <p class="text-xl text-brutBlack mt-8 max-w-3xl mx-auto uppercase">Designed to simplify your audio control needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8 mb-12">
+                <div class="relative brutal-border bg-brutWhite rotate-1 transform p-6 mt-8">
+                    <div class="absolute -top-8 -left-4 w-12 h-12 diagonal-stripes brutal-border flex items-center justify-center font-bold text-xl text-brutWhite">1</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase mt-4">Drag</h3>
+                    <p class="text-brutBlack">Select your audio files from any location on your system.</p>
+                </div>
+                
+                <div class="relative brutal-border bg-brutWhite -rotate-1 transform p-6 mt-8">
+                    <div class="absolute -top-8 -left-4 w-12 h-12 diagonal-stripes brutal-border flex items-center justify-center font-bold text-xl text-brutWhite">2</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase mt-4">Drop</h3>
+                    <p class="text-brutBlack">Drag them onto the pad of your choice for instant assignment.</p>
+                </div>
+                
+                <div class="relative brutal-border bg-brutWhite rotate-1 transform p-6 mt-8">
+                    <div class="absolute -top-8 -left-4 w-12 h-12 diagonal-stripes brutal-border flex items-center justify-center font-bold text-xl text-brutWhite">3</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase mt-4">Play</h3>
+                    <p class="text-brutBlack">Trigger sounds with zero latency at the perfect moment.</p>
+                </div>
+            </div>
+            
+            <div class="bg-brutBlack brutal-border-white p-6 mt-16">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 uppercase text-brutWhite">Available on All Major Platforms</h3>
+                        <p class="text-brutWhite mb-6 border-l-4 border-brutWhite pl-4">Whether you're on macOS, Windows, Linux or prefer the web, PadVibe has you covered.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">macOS</span>
+                            <span class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">Windows</span>
+                            <span class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">Linux</span>
+                            <span class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">Web</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/shabeer-wms/padvibe/releases/download/beta/pads.zip" class="flex-shrink-0 inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase bg-primary text-brutBlack brutal-border-white brutal-hover tracking-wider">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                            <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1.2.5-2 1.5-2 2.8 0 1.5 1.2 2.8 2.7 2.8h14.7c1.5 0 2.8-1.2 2.8-2.8 0-1.3-.8-2.3-2-2.8-.3-1.3-1.4-2.2-2.8-2.2-.5 0-.9.1-1.3.3-.8-2.1-2.9-3.5-5.3-3.5z"></path>
+                            <path d="M12 15v6"></path>
+                            <path d="m9 18 3 3 3-3"></path>
+                        </svg>
+                        Download Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Developers Section -->
+    <section id="developers" class="py-16 md:py-24 bg-secondary px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="brutal-border bg-brutWhite p-6 rotate-1 transform">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 uppercase tracking-wider">Built for Power Users</h2>
+                    <p class="text-xl text-brutBlack mb-6 border-l-4 border-brutBlack pl-4">Launch PadVibe with command-line arguments to load sessions and integrate directly into your custom scripts.</p>
+                    
+                    <div class="mt-8">
+                        <a href="https://github.com/shabeer-wms/padvibe.git" class="bg-brutBlack text-brutWhite px-4 py-2 brutal-border-sm inline-flex items-center uppercase font-bold tracking-wider">
+                            Developer Documentation
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="font-mono bg-brutBlack brutal-border-white p-6 -rotate-1 transform">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-4 h-4 brutal-border-sm bg-primary"></div>
+                        <div class="w-4 h-4 brutal-border-sm bg-secondary"></div>
+                        <div class="w-4 h-4 brutal-border-sm bg-brutWhite"></div>
+                        <span class="text-brutWhite text-sm ml-2 uppercase font-bold">Terminal</span>
+                    </div>
+                    <div class="bg-brutBlack text-brutWhite p-4 brutal-border-white">
+                        <pre class="text-brutWhite text-sm"><span class="text-primary">$</span> padvibe --load-session="podcast.pvs" --auto-play</pre>
+                        <pre class="text-brutWhite text-sm mt-2"><span class="text-primary">$</span> padvibe --assign pad1="intro.mp3" pad2="outro.mp3"</pre>
+                        <pre class="text-brutWhite text-sm mt-2"><span class="text-primary">$</span> padvibe --help</pre>
+                        <p class="mt-4 text-brutWhite text-sm uppercase font-bold">Perfect for automated workflows and custom integrations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t-8 border-brutBlack px-4 bg-brutWhite">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <div class="h-10 w-10 bg-primary brutal-border-sm mr-2 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                            <rect x="4" y="4" width="16" height="16" rx="0" ry="0"></rect>
+                            <rect x="8" y="8" width="4" height="4"></rect>
+                            <rect x="12" y="12" width="4" height="4"></rect>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold uppercase tracking-wider">PadVibe</span>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="brutal-border-sm bg-brutBlack p-2 hover:bg-primary transition-colors duration-300">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-6 w-6 text-brutWhite" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="brutal-border-sm bg-brutBlack p-2 hover:bg-primary transition-colors duration-300">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="h-6 w-6 text-brutWhite" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <p class="text-brutBlack uppercase font-bold">© 2025 PadVibe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fade-in-trigger');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
