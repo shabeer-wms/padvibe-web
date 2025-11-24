@@ -1,59 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO-optimized title with primary keyword -->
-    <title>PadVibe | #1 Audio Palette App for Podcasters & Streamers</title>
-    <!-- Enhanced meta description with target keywords -->
-    <meta name="description"
-        content="PadVibe is the ultimate audio palette for instant sound playback. Perfect for podcasters, streamers, and content creators who need zero-lag audio control.">
-    <!-- Additional keywords for SEO -->
-    <meta name="keywords"
-        content="audio palette, sound board, audio pad, jingle palette, podcast sounds, streaming audio, sound effects, audio triggers, PadVibe, audio control">
-    <!-- Canonical URL to prevent duplicate content issues -->
-    <link rel="canonical" href="https://padvibe.pro26.in">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Courier+Prime:wght@400;700&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Favicon -->
-
-    <link rel="icon" href="/logo.png" sizes="any">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF2E00">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#FF2E00">
-    <meta name="msapplication-TileColor" content="#FF2E00">
-
-    <!-- Enhanced Open Graph -->
+    <title>PadVibe | The Premium Audio Palette for Creators</title>
+    <meta name="description" content="PadVibe is the ultimate zero-latency audio palette for podcasters, streamers, and theater professionals. Instant playback, premium design, and cross-platform support.">
+    <meta name="keywords" content="audio palette, sound board, padvibe, podcast tools, streaming audio, sound effects, jingle palette, zero latency">
+    <meta name="author" content="PadVibe Team">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PadVibe | #1 Audio Palette App for Podcasters & Streamers">
-    <meta property="og:description"
-        content="PadVibe is the ultimate audio palette for instant sound playback. Perfect for podcasters, streamers, and content creators who need zero-lag audio control.">
+    <meta property="og:url" content="https://padvibe.pro26.in/">
+    <meta property="og:title" content="PadVibe | The Premium Audio Palette">
+    <meta property="og:description" content="Master your audio flow with PadVibe. The zero-latency audio palette for professionals.">
     <meta property="og:image" content="https://padvibe.pro26.in/og-image.jpg">
-    <meta property="og:image:alt" content="PadVibe audio palette app interface">
-    <meta property="og:site_name" content="PadVibe Audio Palette">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:url" content="https://padvibe.pro26.in">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PadVibe | #1 Audio Palette App for Podcasters & Streamers">
-    <meta name="twitter:description"
-        content="PadVibe is the ultimate audio palette for instant sound playback. Perfect for podcasters, streamers, and content creators who need zero-lag audio control.">
-    <meta name="twitter:image" content="https://padvibe.pro26.in/og-image.jpg">
-    <meta name="twitter:creator" content="@padvibe">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://padvibe.pro26.in/">
+    <meta property="twitter:title" content="PadVibe | The Premium Audio Palette">
+    <meta property="twitter:description" content="Master your audio flow with PadVibe. The zero-latency audio palette for professionals.">
+    <meta property="twitter:image" content="https://padvibe.pro26.in/og-image.jpg">
 
-    <!-- JSON-LD structured data for rich snippets -->
+    <link rel="canonical" href="https://padvibe.pro26.in">
+    <link rel="icon" href="/logo.png" sizes="any">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1e1e1e',
+                            600: '#2d2d2d',
+                        },
+                        accent: {
+                            primary: '#FF2E00',
+                            secondary: '#3B82F6',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+        }
+        .bento-card {
+            background: rgba(30, 30, 30, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+        }
+        .pad-btn {
+            transition: all 0.1s;
+        }
+        .pad-btn:active {
+            transform: scale(0.95);
+            background-color: #FF2E00;
+            box-shadow: 0 0 15px #FF2E00;
+        }
+        .grid-bg {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "PadVibe",
       "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "macOS, Windows, Linux, Web",
+      "operatingSystem": "macOS, Windows, Linux",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -65,1065 +110,239 @@
         "ratingValue": "4.8",
         "ratingCount": "156"
       },
-      "featureList": "Zero-Lag Playback, Drag & Drop Interface, Cross-Platform Support, Command-Line Integration",
-      "screenshot": "https://padvibe.pro26.in/og-image.jpg",
-      "downloadUrl": "https://github.com/shabeer-wms/padvibe/releases/download/v1.2.0/pads.zip"
+      "downloadUrl": "https://github.com/shabeer-wms/padvibe/releases"
     }
     </script>
-
-    <!-- Webpage structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "PadVibe | #1 Audio Palette App for Podcasters & Streamers",
-      "description": "PadVibe is the ultimate audio palette for instant sound playback. Perfect for podcasters, streamers, and content creators who need zero-lag audio control.",
-      "keywords": "audio palette, sound board, audio pad, jingle palette, podcast sounds, streaming audio",
-      "url": "https://padvibe.pro26.in",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://padvibe.pro26.in"
-      }
-    }
-    </script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#FF2E00',
-                        secondary: '#00FF66',
-                        brutBlack: '#000000',
-                        brutWhite: '#FFFFFF',
-                        brutGray: '#AAAAAA',
-                    },
-                    fontFamily: {
-                        mono: ['Space Mono', 'Courier Prime', 'monospace'],
-                        sans: ['Space Mono', 'Courier Prime', 'monospace']
-                    },
-                }
-            },
-            variants: {
-                extend: {},
-            },
-            plugins: [],
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .brutal-border {
-                border: 4px solid #000;
-                box-shadow: 8px 8px 0 #000;
-            }
-            
-            .brutal-border-white {
-                border: 4px solid #FFF;
-                box-shadow: 8px 8px 0 #FFF;
-            }
-            
-            .brutal-border-sm {
-                border: 3px solid #000;
-                box-shadow: 4px 4px 0 #000;
-            }
-
-            .brutal-hover {
-                transition: transform 0.1s ease-in-out;
-            }
-            
-            .brutal-hover:hover {
-                transform: translate(-2px, -2px);
-                box-shadow: 10px 10px 0 #000;
-            }
-            
-            .animate-glitch {
-                animation: glitch 1s infinite;
-            }
-            
-            @keyframes glitch {
-                0% { transform: translate(0) }
-                20% { transform: translate(-2px, 2px) }
-                40% { transform: translate(-2px, -2px) }
-                60% { transform: translate(2px, 2px) }
-                80% { transform: translate(2px, -2px) }
-                100% { transform: translate(0) }
-            }
-            
-            .diagonal-stripes {
-                background-image: repeating-linear-gradient(
-                    45deg,
-                    #000,
-                    #000 10px,
-                    #FF2E00 10px,
-                    #FF2E00 20px
-                );
-            }
-            
-            .noise-bg {
-                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-                background-blend-mode: multiply;
-            }
-        }
-    </style>
 </head>
+<body class="antialiased selection:bg-accent-primary selection:text-white overflow-x-hidden">
 
-<body class="bg-brutWhite text-brutBlack font-mono" itemscope itemtype="https://schema.org/WebPage">
-    <!-- Navigation -->
-    <nav class="bg-brutWhite fixed w-full z-10 border-b-8 border-brutBlack">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <a href="#" class="flex items-center" aria-label="PadVibe Home">
-                        <div class="h-10 w-10 bg-primary brutal-border-sm mr-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"
-                                stroke-linejoin="miter" aria-hidden="true">
-                                <rect x="4" y="4" width="16" height="16" rx="0" ry="0"></rect>
-                                <rect x="8" y="8" width="4" height="4"></rect>
-                                <rect x="12" y="12" width="4" height="4"></rect>
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold tracking-wider uppercase">PadVibe <span
-                                class="hidden sm:inline text-sm font-normal">Audio Palette</span></span>
-                    </a>
+    <!-- Background Grid -->
+    <div class="fixed inset-0 grid-bg pointer-events-none z-[-1]"></div>
+    
+    <!-- Glow Effects -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-accent-primary/10 rounded-full blur-[128px] pointer-events-none"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-accent-secondary/10 rounded-full blur-[128px] pointer-events-none"></div>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center">
+        
+        <!-- Header / Nav -->
+        <header class="flex justify-between items-center mb-12 fade-in">
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="PadVibe Logo" class="w-10 h-10 rounded-lg object-contain bg-white/5 p-1">
+                <span class="font-bold text-xl tracking-tight">PadVibe</span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-400">
+                <a href="#features" class="hover:text-white transition-colors">Features</a>
+                <a href="#use-cases" class="hover:text-white transition-colors">Use Cases</a>
+                <a href="https://github.com/shabeer-wms/padvibe" class="hover:text-white transition-colors">GitHub</a>
+            </nav>
+        </header>
+
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4">
+            
+            <!-- 1. Hero Card (Large, Top Left) -->
+            <div class="bento-card rounded-3xl p-8 md:col-span-2 md:row-span-2 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-primary/20 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-700"></div>
+                
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-accent-primary mb-6">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
+                        </span>
+                        v1.2.0 Available Now
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tight">
+                        Master Your <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Audio Flow.</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg max-w-md leading-relaxed">
+                        The zero-latency audio palette for professionals. Drag, drop, and trigger sounds instantly. Built for speed.
+                    </p>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="flex items-center -mr-2 sm:hidden">
-                    <button type="button" id="mobile-menu-button"
-                        class="inline-flex items-center justify-center p-2 bg-brutBlack text-brutWhite hover:bg-primary focus:outline-none brutal-border-sm"
-                        aria-expanded="false" aria-controls="mobile-menu">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3"
-                                d="M4 6h16M4 12h16M4 18h16" />
+                <div class="flex gap-4 mt-8 relative z-10">
+                    <a href="https://github.com/shabeer-wms/padvibe/releases/latest" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-colors flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                         </svg>
+                        Download
+                    </a>
+                    <a href="#demo" class="px-8 py-4 rounded-xl font-bold border border-white/20 hover:bg-white/5 transition-colors">
+                        Try Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Interactive Demo (Top Right) -->
+            <div id="demo" class="bento-card rounded-3xl p-6 md:col-span-2 md:row-span-2 flex flex-col items-center justify-center relative bg-dark-800">
+                <div class="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay"></div>
+                <h3 class="text-sm font-mono text-gray-500 mb-6 uppercase tracking-widest">Interactive Preview</h3>
+                
+                <div class="grid grid-cols-3 gap-3 w-full max-w-sm aspect-square">
+                    <!-- Pad Buttons -->
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-accent-primary/50 h-full w-full flex items-center justify-center group" onclick="playSound(0)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-accent-primary transition-colors"></div>
+                    </button>
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-accent-secondary/50 h-full w-full flex items-center justify-center group" onclick="playSound(1)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-accent-secondary transition-colors"></div>
+                    </button>
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-green-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(2)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-green-500 transition-colors"></div>
+                    </button>
+                    
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-purple-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(3)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-purple-500 transition-colors"></div>
+                    </button>
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-yellow-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(4)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-yellow-500 transition-colors"></div>
+                    </button>
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-pink-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(5)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-pink-500 transition-colors"></div>
+                    </button>
+                    
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-cyan-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(6)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-cyan-500 transition-colors"></div>
+                    </button>
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-orange-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(7)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-orange-500 transition-colors"></div>
+                    </button>
+                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-white/50 h-full w-full flex items-center justify-center group" onclick="playSound(8)">
+                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-white transition-colors"></div>
                     </button>
                 </div>
-
-                <!-- Desktop menu -->
-                <div class="hidden sm:flex sm:items-center sm:ml-6 space-x-2">
-                    <a href="#features"
-                        class="text-brutBlack px-4 py-2 bg-brutGray brutal-border-sm brutal-hover uppercase font-bold">Features</a>
-                    <a href="#platforms"
-                        class="text-brutBlack px-4 py-2 bg-brutGray brutal-border-sm brutal-hover uppercase font-bold">Platforms</a>
-                    <a href="#developers"
-                        class="text-brutBlack px-4 py-2 bg-brutGray brutal-border-sm brutal-hover uppercase font-bold">Developers</a>
-                    <a href="#download"
-                        class="text-brutBlack px-4 py-2 bg-primary brutal-border-sm brutal-hover uppercase font-bold">Download</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden sm:hidden bg-brutWhite pb-3 border-t-4 border-brutBlack">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#features"
-                    class="block px-3 py-2 bg-brutGray text-brutBlack brutal-border-sm my-2 font-bold uppercase">Features</a>
-                <a href="#platforms"
-                    class="block px-3 py-2 bg-brutGray text-brutBlack brutal-border-sm my-2 font-bold uppercase">Platforms</a>
-                <a href="#developers"
-                    class="block px-3 py-2 bg-brutGray text-brutBlack brutal-border-sm my-2 font-bold uppercase">Developers</a>
-                <a href="#download"
-                    class="block px-3 py-2 bg-primary text-brutBlack brutal-border-sm my-2 font-bold uppercase">Download</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section with improved SEO content -->
-    <section class="pt-32 pb-16 md:pt-40 md:pb-24 px-4 bg-brutWhite" id="home" itemscope
-        itemtype="https://schema.org/WebPageElement">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                <div class="lg:col-span-3 relative">
-                    <div class="h-8 w-8 bg-secondary absolute -top-4 -left-4 brutal-border-sm"></div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-none text-brutBlack mb-8 uppercase tracking-tight"
-                        itemprop="headline">
-                        The Ultimate Audio Palette, <span
-                            class="bg-primary px-2 py-1 brutal-border-sm inline-block mt-2 rotate-1 transform">Zero Lag
-                            Playback.</span>
-                    </h1>
-                    <p class="text-xl text-brutBlack mb-8 border-l-8 border-brutBlack pl-4" itemprop="description">
-                        PadVibe is the most powerful cross-platform <strong>audio palette app</strong> for podcasters,
-                        streamers, and content creators who demand instant, reliable sound effects and jingles.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
-                        <a href="#download" id="download-btn"
-                            class="inline-flex items-center justify-center px-6 py-3 text-base font-bold uppercase bg-primary text-brutBlack brutal-border brutal-hover tracking-wider"
-                            itemprop="downloadUrl">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"
-                                aria-hidden="true">
-                                <path
-                                    d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1.2.5-2 1.5-2 2.8 0 1.5 1.2 2.8 2.7 2.8h14.7c1.5 0 2.8-1.2 2.8-2.8 0-1.3-.8-2.3-2-2.8-.3-1.3-1.4-2.2-2.8-2.2-.5 0-.9.1-1.3.3-.8-2.1-2.9-3.5-5.3-3.5z">
-                                </path>
-                                <path d="M12 15v6"></path>
-                                <path d="m9 18 3 3 3-3"></path>
-                            </svg>
-                            Download for macOS
-                        </a>
-                        <a href="#platforms"
-                            class="inline-flex items-center justify-center px-6 py-3 text-base font-bold uppercase bg-brutGray text-brutBlack brutal-border brutal-hover tracking-wider">
-                            All Platforms
-                        </a>
-                    </div>
-                    <!-- Keyword-rich badges for SEO -->
-                    <div class="mt-8 flex flex-wrap gap-2">
-                        <span class="inline-block px-3 py-1 bg-brutGray text-brutBlack text-sm uppercase font-bold">#1
-                            Audio Palette</span>
-                        <span
-                            class="inline-block px-3 py-1 bg-brutGray text-brutBlack text-sm uppercase font-bold">Podcast
-                            Sound Effects</span>
-                        <span
-                            class="inline-block px-3 py-1 bg-brutGray text-brutBlack text-sm uppercase font-bold">Streaming
-                            Audio Tools</span>
-                    </div>
-                </div>
-                <div class="lg:col-span-2 brutal-border bg-secondary p-1 -rotate-2 transform" itemprop="image" itemscope
-                    itemtype="https://schema.org/ImageObject">
-                    <div class="brutal-border-sm bg-brutBlack aspect-[4/3] flex items-center justify-center">
-                        <div class="p-8 text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-20 w-20 mx-auto text-brutWhite animate-glitch" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"
-                                aria-hidden="true">
-                                <rect x="2" y="2" width="20" height="20" rx="0" ry="0"></rect>
-                                <rect x="7" y="7" width="4" height="4"></rect>
-                                <rect x="13" y="7" width="4" height="4"></rect>
-                                <rect x="7" y="13" width="4" height="4"></rect>
-                                <rect x="13" y="13" width="4" height="4"></rect>
-                            </svg>
-                            <p class="text-brutWhite text-lg uppercase font-bold mt-4" itemprop="caption">PadVibe Audio
-                                Palette UI</p>
-                            <meta itemprop="url" content="https://padvibe.pro26.in/og-image.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-16 md:py-24 bg-brutBlack px-4" itemscope itemtype="https://schema.org/ItemList">
-        <meta itemprop="itemListOrder" content="Unordered">
-        <meta itemprop="numberOfItems" content="4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-block brutal-border-white bg-primary px-8 py-2 rotate-1 transform">
-                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider" itemprop="name">The Most
-                        Advanced Audio Palette</h2>
-                </div>
-                <p class="text-xl text-brutWhite mt-8 max-w-3xl mx-auto uppercase">Our cutting-edge features empower
-                    your audio workflow with unmatched speed and precision.</p>
+                <p class="mt-4 text-xs text-gray-600 font-mono">Click pads to test latency</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-4">
-                <!-- Feature 1 -->
-                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform" itemprop="itemListElement" itemscope
-                    itemtype="https://schema.org/ListItem">
-                    <meta itemprop="position" content="1">
-                    <div class="w-12 h-12 bg-primary brutal-border-sm flex items-center justify-center mb-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"
-                            stroke-linejoin="miter" aria-hidden="true">
-                            <path d="M12 19V5"></path>
-                            <path d="M5 12l7-7 7 7"></path>
+            <!-- 3. Tech Specs (Bottom Left) -->
+            <div class="bento-card rounded-3xl p-6 md:col-span-1 flex flex-col justify-center">
+                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Blazing Fast</h3>
+                <p class="text-sm text-gray-400">Built with Flutter for native performance on macOS, Windows & Linux.</p>
+            </div>
+
+            <!-- 4. Feature Highlight (Bottom Center) -->
+            <div class="bento-card rounded-3xl p-6 md:col-span-2 flex items-center justify-between group">
+                <div class="pr-4">
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-accent-primary transition-colors">Integrated Timer</h3>
+                    <p class="text-sm text-gray-400">Keep track of your segments with the built-in floating timer window.</p>
+                </div>
+                <div class="h-16 w-32 bg-dark-900 rounded-lg border border-white/10 flex items-center justify-center font-mono text-2xl text-accent-primary shadow-[0_0_15px_rgba(255,46,0,0.2)]">
+                    00:42
+                </div>
+            </div>
+
+            <!-- 5. Social / Footer (Bottom Right) -->
+            <div class="bento-card rounded-3xl p-6 md:col-span-1 flex flex-col justify-center items-center text-center">
+                <p class="text-xs text-gray-500 mb-4">Open Source Project</p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/shabeer-wms/padvibe" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
                         </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 uppercase" itemprop="name">Zero-Lag Audio Playback</h3>
-                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2" itemprop="description">Powered by the
-                        high-performance SoLoud audio engine for instantaneous sound triggering in live environments.
-                    </p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform" itemprop="itemListElement" itemscope
-                    itemtype="https://schema.org/ListItem">
-                    <meta itemprop="position" content="2">
-                    <div class="w-12 h-12 bg-secondary brutal-border-sm flex items-center justify-center mb-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"
-                            stroke-linejoin="miter" aria-hidden="true">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 uppercase" itemprop="name">Intuitive Sound Board Interface</h3>
-                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2" itemprop="description">Simply drag and
-                        drop audio files onto pads for the easiest sound palette setup available.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform" itemprop="itemListElement" itemscope
-                    itemtype="https://schema.org/ListItem">
-                    <meta itemprop="position" content="3">
-                    <div class="w-12 h-12 bg-primary brutal-border-sm flex items-center justify-center mb-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"
-                            stroke-linejoin="miter" aria-hidden="true">
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 uppercase" itemprop="name">Multi-Platform Audio Palette</h3>
-                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2" itemprop="description">Your complete
-                        audio palette works seamlessly on macOS, Windows, Linux, and directly in your browser.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform" itemprop="itemListElement" itemscope
-                    itemtype="https://schema.org/ListItem">
-                    <meta itemprop="position" content="4">
-                    <div class="w-12 h-12 bg-secondary brutal-border-sm flex items-center justify-center mb-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brutBlack" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"
-                            stroke-linejoin="miter" aria-hidden="true">
-                            <polyline points="4 17 10 11 4 5"></polyline>
-                            <line x1="12" y1="19" x2="20" y2="19"></line>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 uppercase" itemprop="name">Advanced Customization Options</h3>
-                    <p class="text-brutBlack border-l-4 border-brutBlack pl-2" itemprop="description">Built with
-                        Flutter, ensuring a smooth and customizable audio palette experience for all users.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Specifications - NEW SECTION -->
-    <section id="tech-specs" class="py-16 md:py-24 px-4 bg-brutWhite">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-block brutal-border bg-primary px-8 py-2 rotate-1 transform">
-                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider">Technical Powerhouse</h2>
-                </div>
-                <p class="text-xl text-brutBlack mt-8 max-w-3xl mx-auto uppercase">Under the hood specifications that
-                    make PadVibe the ultimate audio palette tool</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-                <div class="brutal-border bg-brutBlack text-brutWhite p-8 rotate-1 transform">
-                    <h3 class="text-2xl font-bold uppercase mb-6">Audio Engine Specs</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-primary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">SoLoud Audio Engine:</span> High-performance audio library with
-                                &lt;5ms latency response time
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-primary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">Format Support:</span> MP3, WAV, FLAC, OGG, AIFF, and more
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-primary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">Sample Rate:</span> Up to 192kHz with 32-bit floating-point
-                                processing
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-primary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">Simultaneous Playback:</span> Up to 64 audio streams with
-                                independent volume control
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="brutal-border bg-brutBlack text-brutWhite p-8 -rotate-1 transform">
-                    <h3 class="text-2xl font-bold uppercase mb-6">User Interface</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-secondary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">Pad Configuration:</span> Up to 64 customizable audio pads with
-                                color coding
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-secondary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">Keyboard Shortcuts:</span> Fully customizable hotkeys for all
-                                functions
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-secondary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">Session Management:</span> Save and load complete pad layouts
-                                and settings
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-6 h-6 bg-secondary flex-shrink-0 mt-1 mr-3"></div>
-                            <div>
-                                <span class="font-bold">Multiple Decks:</span> Switch between different audio palette
-                                configurations instantly
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="mt-16 brutal-border bg-brutGray p-8">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="text-brutBlack mb-6 md:mb-0">
-                        <h3 class="text-2xl font-bold uppercase">System Requirements</h3>
-                        <p class="mt-2 max-w-2xl">PadVibe is optimized for performance, requiring minimal system
-                            resources while delivering professional audio quality.</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div>
-                            <p class="font-bold uppercase">Windows</p>
-                            <ul class="list-disc pl-4">
-                                <li>Windows 10/11</li>
-                                <li>4GB RAM</li>
-                                <li>100MB disk space</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-bold uppercase">macOS</p>
-                            <ul class="list-disc pl-4">
-                                <li>macOS 10.14+</li>
-                                <li>4GB RAM</li>
-                                <li>100MB disk space</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflow Section -->
-    <section id="platforms" class="py-16 md:py-24 px-4 bg-brutWhite" itemscope itemtype="https://schema.org/HowTo">
-        <meta itemprop="totalTime" content="PT1M">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-block brutal-border bg-secondary px-8 py-2 -rotate-1 transform">
-                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider" itemprop="name">The Simplest
-                        Audio Palette Workflow</h2>
-                </div>
-                <p class="text-xl text-brutBlack mt-8 max-w-3xl mx-auto uppercase" itemprop="description">Designed to be
-                    the fastest audio palette for live performances and real-time audio control.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8 mb-12">
-                <div class="relative brutal-border bg-brutWhite rotate-1 transform p-6 mt-8" itemprop="step" itemscope
-                    itemtype="https://schema.org/HowToStep">
-                    <meta itemprop="position" content="1">
-                    <div
-                        class="absolute -top-8 -left-4 w-12 h-12 diagonal-stripes brutal-border flex items-center justify-center font-bold text-xl text-brutWhite">
-                        1</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase mt-4" itemprop="name">Drag Audio Files</h3>
-                    <p class="text-brutBlack" itemprop="text">Select your podcast intros, sound effects, or music from
-                        any location on your system.</p>
-                </div>
-
-                <div class="relative brutal-border bg-brutWhite -rotate-1 transform p-6 mt-8" itemprop="step" itemscope
-                    itemtype="https://schema.org/HowToStep">
-                    <meta itemprop="position" content="2">
-                    <div
-                        class="absolute -top-8 -left-4 w-12 h-12 diagonal-stripes brutal-border flex items-center justify-center font-bold text-xl text-brutWhite">
-                        2</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase mt-4" itemprop="name">Drop to Your Palette</h3>
-                    <p class="text-brutBlack" itemprop="text">Drag sound files onto your custom audio palette for
-                        instant organization and access.</p>
-                </div>
-
-                <div class="relative brutal-border bg-brutWhite rotate-1 transform p-6 mt-8" itemprop="step" itemscope
-                    itemtype="https://schema.org/HowToStep">
-                    <meta itemprop="position" content="3">
-                    <div
-                        class="absolute -top-8 -left-4 w-12 h-12 diagonal-stripes brutal-border flex items-center justify-center font-bold text-xl text-brutWhite">
-                        3</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase mt-4" itemprop="name">Trigger Sounds Instantly</h3>
-                    <p class="text-brutBlack" itemprop="text">Launch audio clips with zero latency at exactly the right
-                        moment for your podcast or stream.</p>
-                </div>
-            </div>
-
-            <div class="bg-brutBlack brutal-border-white p-6 mt-16">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4 uppercase text-brutWhite">Audio Palette for Every Platform
-                        </h3>
-                        <p class="text-brutWhite mb-6 border-l-4 border-brutWhite pl-4">Whether you're a podcaster on
-                            macOS, a streamer on Windows, or a creator on Linux, PadVibe delivers the perfect audio
-                            palette experience.</p>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">macOS</span>
-                            <span
-                                class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">Windows</span>
-                            <span
-                                class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">Linux</span>
-                            <span
-                                class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm uppercase font-bold">Web</span>
-                        </div>
-                    </div>
-                    <a href="https://github.com/shabeer-wms/padvibe/releases/download/beta/pads.zip" id="download"
-                        class="flex-shrink-0 inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase bg-primary text-brutBlack brutal-border-white brutal-hover tracking-wider">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"
-                            aria-hidden="true">
-                            <path
-                                d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1.2.5-2 1.5-2 2.8 0 1.5 1.2 2.8 2.7 2.8h14.7c1.5 0 2.8-1.2 2.8-2.8 0-1.3-.8-2.3-2-2.8-.3-1.3-1.4-2.2-2.8-2.2-.5 0-.9.1-1.3.3-.8-2.1-2.9-3.5-5.3-3.5z">
-                            </path>
-                            <path d="M12 15v6"></path>
-                            <path d="m9 18 3 3 3-3"></path>
-                        </svg>
-                        Download Your Audio Palette
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Testimonials for social proof -->
-    <section id="testimonials" class="py-16 md:py-24 bg-brutBlack px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-block brutal-border-white bg-primary px-8 py-2 rotate-1 transform">
-                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider">Trusted by Audio Professionals
-                    </h2>
+            <!-- 6. Use Cases (New Row) -->
+            <div id="use-cases" class="bento-card rounded-3xl p-8 md:col-span-4 flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/3">
+                    <h2 class="text-3xl font-bold mb-4">Built for Every Creator</h2>
+                    <p class="text-gray-400">Whether you're live on Twitch, recording a podcast, or managing theater sound, PadVibe adapts to your workflow.</p>
                 </div>
-                <p class="text-xl text-brutWhite mt-8 max-w-3xl mx-auto uppercase">See why content creators choose
-                    PadVibe as their go-to audio palette solution.</p>
+                <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                        <div class="text-accent-primary mb-2">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                        </div>
+                        <h4 class="font-bold mb-1">Podcasters</h4>
+                        <p class="text-xs text-gray-500">Trigger intros, outros, and effects instantly.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                        <div class="text-accent-secondary mb-2">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h4 class="font-bold mb-1">Streamers</h4>
+                        <p class="text-xs text-gray-500">Engage your audience with live sound reactions.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                        <div class="text-purple-500 mb-2">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 3-2 3-2zm0 0v-8"/></svg>
+                        </div>
+                        <h4 class="font-bold mb-1">Theater</h4>
+                        <p class="text-xs text-gray-500">Reliable cues for live performance.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Review">
-                    <meta itemprop="reviewRating" content="5">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary brutal-border-sm flex items-center justify-center">
-                            <span class="text-brutBlack font-bold text-xl">JB</span>
-                        </div>
-                        <div class="ml-4">
-                            <p class="font-bold uppercase" itemprop="author">Jack Brewer</p>
-                            <p class="text-sm uppercase">Podcast Host</p>
-                        </div>
-                    </div>
-                    <blockquote class="border-l-4 border-brutBlack pl-4 italic" itemprop="reviewBody">
-                        "PadVibe is hands-down the best audio palette I've used. The zero-lag playback makes my podcast
-                        transitions seamless, and the interface is incredibly intuitive."
-                    </blockquote>
-                </div>
-
-                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Review">
-                    <meta itemprop="reviewRating" content="5">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-secondary brutal-border-sm flex items-center justify-center">
-                            <span class="text-brutBlack font-bold text-xl">SM</span>
-                        </div>
-                        <div class="ml-4">
-                            <p class="font-bold uppercase" itemprop="author">Sarah Montez</p>
-                            <p class="text-sm uppercase">Twitch Streamer</p>
-                        </div>
-                    </div>
-                    <blockquote class="border-l-4 border-brutBlack pl-4 italic" itemprop="reviewBody">
-                        "As a streamer, timing is everything. PadVibe's instant playback and simple organization system
-                        have completely elevated my streams. The best audio palette app out there!"
-                    </blockquote>
-                </div>
-
-                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Review">
-                    <meta itemprop="reviewRating" content="5">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary brutal-border-sm flex items-center justify-center">
-                            <span class="text-brutBlack font-bold text-xl">DT</span>
-                        </div>
-                        <div class="ml-4">
-                            <p class="font-bold uppercase" itemprop="author">David Torres</p>
-                            <p class="text-sm uppercase">Theater Sound Designer</p>
-                        </div>
-                    </div>
-                    <blockquote class="border-l-4 border-brutBlack pl-4 italic" itemprop="reviewBody">
-                        "For live theater sound design, reliability is crucial. PadVibe's audio palette hasn't failed me
-                        once. The cross-platform support means I can use it in any venue setup."
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases - NEW SECTION -->
-    <section id="use-cases" class="py-16 md:py-24 bg-brutWhite px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-block brutal-border bg-secondary px-8 py-2 -rotate-1 transform">
-                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider">Audio Palette Applications</h2>
-                </div>
-                <p class="text-xl text-brutBlack mt-8 max-w-3xl mx-auto uppercase">How different industries utilize
-                    PadVibe's powerful audio palette</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-                <!-- Podcasting Use Case -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="w-full md:w-32 h-32 flex-shrink-0 bg-brutBlack brutal-border-sm">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"
-                                stroke-linejoin="miter">
-                                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                <line x1="12" y1="19" x2="12" y2="22"></line>
-                                <line x1="8" y1="22" x2="16" y2="22"></line>
-                            </svg>
-                        </div>
-                    </div>
+            <!-- 7. Testimonials (New Row) -->
+            <div class="bento-card rounded-3xl p-6 md:col-span-2">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold">JD</div>
                     <div>
-                        <h3 class="text-2xl font-bold uppercase mb-4">Podcasting</h3>
-                        <p class="mb-4 text-brutBlack">Podcast hosts use PadVibe as their go-to audio palette for
-                            seamlessly adding intros, outros, sound effects, and transition jingles during recording
-                            sessions or live shows.</p>
-                        <ul class="text-brutBlack border-l-4 border-brutBlack pl-4">
-                            <li class="mb-2"><span class="font-bold">Key Feature:</span> Instant playback with zero lag
-                            </li>
-                            <li><span class="font-bold">Benefit:</span> Maintains natural conversation flow without
-                                editing</li>
-                        </ul>
+                        <h4 class="font-bold text-sm">John Doe</h4>
+                        <p class="text-xs text-gray-500">Podcast Host</p>
                     </div>
                 </div>
+                <p class="text-sm text-gray-300 italic">"PadVibe changed my workflow. No more post-production editing for sound effects. It's all live now!"</p>
+            </div>
 
-                <!-- Live Streaming Use Case -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="w-full md:w-32 h-32 flex-shrink-0 bg-brutBlack brutal-border-sm">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"
-                                stroke-linejoin="miter">
-                                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
-                                <polyline points="17 2 12 7 7 2"></polyline>
-                            </svg>
-                        </div>
-                    </div>
+            <div class="bento-card rounded-3xl p-6 md:col-span-2">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold">AS</div>
                     <div>
-                        <h3 class="text-2xl font-bold uppercase mb-4">Live Streaming</h3>
-                        <p class="mb-4 text-brutBlack">Streamers rely on PadVibe to trigger alerts, sound effects, and
-                            music during their broadcasts, enhancing viewer engagement without interrupting gameplay or
-                            content.</p>
-                        <ul class="text-brutBlack border-l-4 border-brutBlack pl-4">
-                            <li class="mb-2"><span class="font-bold">Key Feature:</span> Customizable keyboard shortcuts
-                            </li>
-                            <li><span class="font-bold">Benefit:</span> Trigger sounds without shifting focus from
-                                primary activity</li>
-                        </ul>
+                        <h4 class="font-bold text-sm">Alice Smith</h4>
+                        <p class="text-xs text-gray-500">Twitch Partner</p>
                     </div>
                 </div>
-
-                <!-- Theater/Performance Use Case -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="w-full md:w-32 h-32 flex-shrink-0 bg-brutBlack brutal-border-sm">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-secondary" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"
-                                stroke-linejoin="miter">
-                                <polygon
-                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                </polygon>
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold uppercase mb-4">Theater & Live Events</h3>
-                        <p class="mb-4 text-brutBlack">Sound designers for theater productions and live events use
-                            PadVibe as a reliable audio palette to cue sound effects and ambient noise at precisely the
-                            right moment.</p>
-                        <ul class="text-brutBlack border-l-4 border-brutBlack pl-4">
-                            <li class="mb-2"><span class="font-bold">Key Feature:</span> Multiple audio decks for
-                                complex productions</li>
-                            <li><span class="font-bold">Benefit:</span> Organize sounds by scene or act for error-free
-                                delivery</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Education Use Case -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="w-full md:w-32 h-32 flex-shrink-0 bg-brutBlack brutal-border-sm">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-secondary" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"
-                                stroke-linejoin="miter">
-                                <path d="M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z">
-                                </path>
-                                <path d="M3 6h18"></path>
-                                <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold uppercase mb-4">Education & Training</h3>
-                        <p class="mb-4 text-brutBlack">Educators use PadVibe as an interactive audio palette during
-                            lessons and presentations, making learning more engaging with sound cues and audio examples.
-                        </p>
-                        <ul class="text-brutBlack border-l-4 border-brutBlack pl-4">
-                            <li class="mb-2"><span class="font-bold">Key Feature:</span> Cross-platform compatibility
-                            </li>
-                            <li><span class="font-bold">Benefit:</span> Works in any classroom environment regardless of
-                                tech setup</li>
-                        </ul>
-                    </div>
-                </div>
+                <p class="text-sm text-gray-300 italic">"The zero latency is real. I hit the button and the sound is there instantly. Love the design too."</p>
             </div>
+
         </div>
-    </section>
 
-    <!-- Blog Preview - NEW SECTION -->
-    <section id="blog" class="py-16 md:py-24 bg-brutWhite px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-block brutal-border bg-primary px-8 py-2 rotate-1 transform">
-                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider">Audio Palette Insights</h2>
-                </div>
-                <p class="text-xl text-brutBlack mt-8 max-w-3xl mx-auto uppercase">Latest articles and tutorials from
-                    our audio experts</p>
+        <footer class="mt-16 pb-8 text-center text-xs text-gray-600 border-t border-white/5 pt-8">
+            <div class="flex justify-center gap-6 mb-4">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
             </div>
+            <p>&copy; 2024 PadVibe. Designed with <span class="text-accent-primary">♥</span> for creators.</p>
+        </footer>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <article class="brutal-border bg-brutBlack p-1">
-                    <div class="bg-brutWhite p-6 h-full flex flex-col">
-                        <div class="text-xs font-bold uppercase mb-2">Tutorial</div>
-                        <h3 class="text-xl font-bold uppercase mb-4">Setting Up The Perfect Audio Palette For Podcasting
-                        </h3>
-                        <p class="text-brutBlack mb-6 flex-grow">Learn how to organize your sound effects, intros, and
-                            outros for maximum efficiency during podcast recording sessions.</p>
-                        <a href="#" class="inline-flex items-center text-brutBlack font-bold uppercase">
-                            Read Article
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+    </main>
 
-                <!-- Blog Post 2 -->
-                <article class="brutal-border bg-brutBlack p-1">
-                    <div class="bg-brutWhite p-6 h-full flex flex-col">
-                        <div class="text-xs font-bold uppercase mb-2">Tips & Tricks</div>
-                        <h3 class="text-xl font-bold uppercase mb-4">10 Creative Ways To Use Audio Palettes In Live
-                            Streams</h3>
-                        <p class="text-brutBlack mb-6 flex-grow">Discover innovative approaches to engage your audience
-                            with perfectly timed sound effects during your next live stream.</p>
-                        <a href="#" class="inline-flex items-center text-brutBlack font-bold uppercase">
-                            Read Article
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="brutal-border bg-brutBlack p-1">
-                    <div class="bg-brutWhite p-6 h-full flex flex-col">
-                        <div class="text-xs font-bold uppercase mb-2">Case Study</div>
-                        <h3 class="text-xl font-bold uppercase mb-4">How Professional Sound Designers Use Audio Palettes
-                        </h3>
-                        <p class="text-brutBlack mb-6 flex-grow">An inside look at how theater and film sound designers
-                            organize their audio palettes for complex productions.</p>
-                        <a href="#" class="inline-flex items-center text-brutBlack font-bold uppercase">
-                            Read Article
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="mt-12 text-center">
-                <a href="#"
-                    class="inline-block px-8 py-4 bg-brutBlack text-brutWhite font-bold uppercase brutal-border-sm brutal-hover">
-                    View All Articles
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section - NEW SECTION -->
-    <section id="faq" class="py-16 md:py-24 bg-brutBlack px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-block brutal-border-white bg-primary px-8 py-2 rotate-1 transform">
-                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider">Frequently Asked Questions</h2>
-                </div>
-                <p class="text-xl text-brutWhite mt-8 max-w-3xl mx-auto uppercase">Everything you need to know about
-                    your audio palette</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- FAQ Item 1 -->
-                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Question">
-                    <h3 class="text-xl font-bold mb-4 uppercase" itemprop="name">What makes PadVibe different from other
-                        audio palette apps?</h3>
-                    <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                        <p class="text-brutBlack border-l-4 border-brutBlack pl-4" itemprop="text">PadVibe stands out
-                            with its zero-lag playback engine, cross-platform compatibility, and intuitive drag-and-drop
-                            interface. Unlike competitors, PadVibe was built from the ground up for professional audio
-                            performance while maintaining an easy-to-use experience.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Question">
-                    <h3 class="text-xl font-bold mb-4 uppercase" itemprop="name">Is PadVibe free to use?</h3>
-                    <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                        <p class="text-brutBlack border-l-4 border-brutBlack pl-4" itemprop="text">Yes! PadVibe is
-                            currently available as a free download for all users. We may introduce premium features in
-                            the future, but our core audio palette functionality will always remain free.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Question">
-                    <h3 class="text-xl font-bold mb-4 uppercase" itemprop="name">What audio formats does PadVibe
-                        support?</h3>
-                    <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                        <p class="text-brutBlack border-l-4 border-brutBlack pl-4" itemprop="text">PadVibe supports all
-                            common audio formats including MP3, WAV, FLAC, OGG, and AIFF. This ensures compatibility
-                            with virtually any audio file you might want to use in your audio palette.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Question">
-                    <h3 class="text-xl font-bold mb-4 uppercase" itemprop="name">Can I use PadVibe with my streaming
-                        software?</h3>
-                    <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                        <p class="text-brutBlack border-l-4 border-brutBlack pl-4" itemprop="text">Absolutely! PadVibe
-                            works seamlessly with OBS, Streamlabs, XSplit, and other popular streaming software. It can
-                            be configured to output audio to any virtual or physical audio device on your system.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="bg-brutWhite brutal-border p-6 rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Question">
-                    <h3 class="text-xl font-bold mb-4 uppercase" itemprop="name">How many sound pads can I use in my
-                        audio palette?</h3>
-                    <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                        <p class="text-brutBlack border-l-4 border-brutBlack pl-4" itemprop="text">PadVibe supports up
-                            to 64 audio pads in a single audio palette. You can also create multiple pad configurations
-                            (called "decks") and switch between them instantly during your sessions.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="bg-brutWhite brutal-border p-6 -rotate-1 transform" itemscope
-                    itemtype="https://schema.org/Question">
-                    <h3 class="text-xl font-bold mb-4 uppercase" itemprop="name">Is there a web version of PadVibe?</h3>
-                    <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                        <p class="text-brutBlack border-l-4 border-brutBlack pl-4" itemprop="text">Yes! PadVibe is
-                            available as a web application that runs directly in your browser. While the desktop
-                            versions offer some additional features, the web version provides the same core audio
-                            palette experience without any installation required.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup - NEW SECTION -->
-    <section id="newsletter" class="py-16 md:py-24 bg-brutWhite px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="brutal-border bg-primary p-1">
-                <div class="brutal-border-sm bg-brutBlack p-8 md:p-12">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h2 class="text-3xl md:text-4xl font-bold text-brutWhite uppercase mb-4">Stay Updated On
-                                Audio Palette Innovation</h2>
-                            <p class="text-brutWhite text-lg mb-6">Subscribe to our newsletter for tips, tutorials, and
-                                early access to new features.</p>
-                        </div>
-                        <div>
-                            <form class="flex flex-col space-y-4">
-                                <div class="brutal-border-white bg-brutWhite p-1">
-                                    <input type="email" placeholder="YOUR EMAIL ADDRESS"
-                                        class="w-full p-3 bg-brutWhite text-brutBlack uppercase font-bold border-none outline-none"
-                                        required>
-                                </div>
-                                <button type="submit"
-                                    class="brutal-border-white brutal-hover bg-secondary text-brutBlack uppercase font-bold py-4 px-6">
-                                    Subscribe to Updates
-                                </button>
-                                <p class="text-brutGray text-xs">We respect your privacy. Unsubscribe at any time.</p>
-                            </form>
-                        </div>
-                    </div </div>
-                </div>
-            </div>
-    </section>
-    <!-- Footer -->
-    <footer class="bg-brutBlack text-brutWhite border-t-8 border-brutBlack">
-        <div class="max-w-7xl mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center">
-                        <div class="h-8 w-8 bg-primary brutal-border-sm mr-2"></div>
-                        <span class="text-xl font-bold uppercase tracking-wider">PadVibe</span>
-                    </div>
-                    <p class="mt-4 text-sm opacity-80">The zero‑lag audio palette for creators on every platform.</p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold uppercase mb-4">Explore</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#features" class="hover:underline">Features</a></li>
-                        <li><a href="#platforms" class="hover:underline">Platforms</a></li>
-                        <li><a href="#developers" class="hover:underline">Developers</a></li>
-                        <li><a href="#blog" class="hover:underline">Blog</a></li>
-                        <li><a href="#faq" class="hover:underline">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold uppercase mb-4">Download</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#download" class="hover:underline">All platforms</a></li>
-                        <li><a href="#platforms" class="hover:underline">System requirements</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold uppercase mb-4">Community</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>
-                            <a href="https://github.com/shabeer-wms/padvibe" target="_blank" rel="noopener"
-                                class="inline-flex items-center hover:underline">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24"
-                                    fill="currentColor" aria-hidden="true">
-                                    <path
-                                        d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.9.58.1.8-.25.8-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.18.08 1.81 1.23 1.81 1.23 1.04 1.8 2.73 1.28 3.4.98.1-.75.41-1.28.75-1.57-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.2-3.08-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.19-1.18 3.19-1.18.63 1.59.23 2.77.11 3.06.75.8 1.2 1.82 1.2 3.08 0 4.43-2.68 5.4-5.24 5.69.42.36.8 1.08.8 2.19v3.25c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z" />
-                                </svg>
-                                GitHub
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://x.com/padvibe" target="_blank" rel="noopener"
-                                class="inline-flex items-center hover:underline">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24"
-                                    fill="currentColor" aria-hidden="true">
-                                    <path
-                                        d="M18.9 2H22l-7.7 8.8L23.3 22H16l-5.4-7-6.2 7H2.3l8.3-9.4L1.8 2h7l4.9 6.5L18.9 2Z" />
-                                </svg>
-                                X / Twitter
-                            </a>
-                        </li>
-                        <li><a href="mailto:hello@padvibe.pro26.in" class="hover:underline">hello@padvibe.pro26.in</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div
-                class="mt-10 pt-6 border-t-4 border-brutWhite flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-xs opacity-80">© <span id="year"></span> PadVibe. All rights reserved.</p>
-                <a href="#home" id="to-top"
-                    class="px-4 py-2 bg-brutWhite text-brutBlack brutal-border-sm font-bold uppercase">Back to top</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back-to-top floating button -->
-    <button id="to-top-float"
-        class="hidden fixed bottom-6 right-6 px-4 py-3 bg-primary text-brutBlack brutal-border-sm font-bold uppercase">Top</button>
-
-    <!-- Scripts -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Current year
-            var y = document.getElementById('year');
-            if (y) y.textContent = new Date().getFullYear();
-
-            // Mobile menu toggle
-            var menuBtn = document.getElementById('mobile-menu-button');
-            var menu = document.getElementById('mobile-menu');
-            if (menuBtn && menu) {
-                menuBtn.addEventListener('click', function () {
-                    var isHidden = menu.classList.toggle('hidden');
-                    menuBtn.setAttribute('aria-expanded', (!isHidden).toString());
-                });
-                menu.querySelectorAll('a[href^="#"]').forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        menu.classList.add('hidden');
-                        menuBtn.setAttribute('aria-expanded', 'false');
-                    });
-                });
+        // Simple Audio Context for Demo
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playSound(index) {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
             }
-
-            // Smooth scroll for internal anchors
-            document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-                a.addEventListener('click', function (e) {
-                    var id = a.getAttribute('href');
-                    if (!id || id === '#') return;
-                    var target = document.querySelector(id);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-
-            // Back-to-top controls
-            var toTop = document.getElementById('to-top');
-            var toTopFloat = document.getElementById('to-top-float');
-            function scrollTopSmooth() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-            if (toTop) toTop.addEventListener('click', function (e) { e.preventDefault(); scrollTopSmooth(); });
-            if (toTopFloat) {
-                toTopFloat.addEventListener('click', scrollTopSmooth);
-                window.addEventListener('scroll', function () {
-                    if (window.scrollY > 600) {
-                        toTopFloat.classList.remove('hidden');
-                    } else {
-                        toTopFloat.classList.add('hidden');
-                    }
-                });
-            }
-
-            // Set platform-specific text for the main download button
-            var dlBtn = document.getElementById('download-btn');
-            function detectOS() {
-                var ua = navigator.userAgent || navigator.platform || '';
-                ua = ua.toLowerCase();
-                if (ua.includes('mac') || ua.includes('darwin')) return 'mac';
-                if (ua.includes('win')) return 'win';
-                if (ua.includes('linux')) return 'linux';
-                return 'other';
-            }
-            var os = detectOS();
-            if (dlBtn) {
-                var label = 'Download';
-                if (os === 'mac') label = 'Download for macOS';
-                else if (os === 'win') label = 'Download for Windows';
-                else if (os === 'linux') label = 'Download for Linux';
-                dlBtn.innerHTML = dlBtn.innerHTML.replace(/Download.*$/, label);
-                dlBtn.setAttribute('href', '#download');
-            }
-        });
+            
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            // Different tones for different pads
+            const frequencies = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33];
+            
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(frequencies[index % frequencies.length], audioCtx.currentTime);
+            
+            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.5);
+        }
     </script>
 </body>
-
 </html>
