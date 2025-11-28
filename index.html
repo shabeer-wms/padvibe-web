@@ -142,7 +142,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4">
             
             <!-- 1. Hero Card (Large, Top Left) -->
-            <div class="bento-card rounded-3xl p-8 md:col-span-2 md:row-span-2 flex flex-col justify-between relative overflow-hidden group">
+            <div class="bento-card rounded-3xl p-8 md:col-span-4 md:row-span-2 flex flex-col justify-between relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-primary/20 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-700"></div>
                 
                 <div class="relative z-10">
@@ -169,51 +169,11 @@
                         </svg>
                         Download
                     </a>
-                    <a href="#demo" class="px-8 py-4 rounded-xl font-bold border border-white/20 hover:bg-white/5 transition-colors">
-                        Try Demo
-                    </a>
+
                 </div>
             </div>
 
-            <!-- 2. Interactive Demo (Top Right) -->
-            <div id="demo" class="bento-card rounded-3xl p-6 md:col-span-2 md:row-span-2 flex flex-col items-center justify-center relative bg-dark-800">
-                <div class="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay"></div>
-                <h3 class="text-sm font-mono text-gray-500 mb-6 uppercase tracking-widest">Interactive Preview</h3>
-                
-                <div class="grid grid-cols-3 gap-3 w-full max-w-sm aspect-square">
-                    <!-- Pad Buttons -->
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-accent-primary/50 h-full w-full flex items-center justify-center group" onclick="playSound(0)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-accent-primary transition-colors"></div>
-                    </button>
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-accent-secondary/50 h-full w-full flex items-center justify-center group" onclick="playSound(1)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-accent-secondary transition-colors"></div>
-                    </button>
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-green-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(2)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-green-500 transition-colors"></div>
-                    </button>
-                    
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-purple-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(3)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-purple-500 transition-colors"></div>
-                    </button>
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-yellow-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(4)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-yellow-500 transition-colors"></div>
-                    </button>
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-pink-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(5)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-pink-500 transition-colors"></div>
-                    </button>
-                    
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-cyan-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(6)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-cyan-500 transition-colors"></div>
-                    </button>
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-orange-500/50 h-full w-full flex items-center justify-center group" onclick="playSound(7)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-orange-500 transition-colors"></div>
-                    </button>
-                    <button class="pad-btn bg-dark-700 rounded-xl border border-white/5 hover:border-white/50 h-full w-full flex items-center justify-center group" onclick="playSound(8)">
-                        <div class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-white transition-colors"></div>
-                    </button>
-                </div>
-                <p class="mt-4 text-xs text-gray-600 font-mono">Click pads to test latency</p>
-            </div>
+
 
             <!-- 3. Tech Specs (Bottom Left) -->
             <div class="bento-card rounded-3xl p-6 md:col-span-1 flex flex-col justify-center">
@@ -384,33 +344,6 @@
 
     </main>
 
-    <script>
-        // Simple Audio Context for Demo
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        
-        function playSound(index) {
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-            
-            const oscillator = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
-            
-            // Different tones for different pads
-            const frequencies = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33];
-            
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(frequencies[index % frequencies.length], audioCtx.currentTime);
-            
-            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-            
-            oscillator.start();
-            oscillator.stop(audioCtx.currentTime + 0.5);
-        }
-    </script>
+
 </body>
 </html>
