@@ -34,6 +34,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -59,33 +60,50 @@
             }
         }
     </script>
+    <script>
+        // Check local storage or system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
 
-    <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-white transition-colors duration-300;
+            }
         }
         .bento-card {
-            background: rgba(30, 30, 30, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
+            @apply bg-white/60 dark:bg-[#1e1e1e]/40 backdrop-blur-xl border border-gray-200 dark:border-white/10 transition-all duration-300;
         }
         .bento-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+            @apply border-gray-300 dark:border-white/15 -translate-y-0.5 shadow-xl dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)];
         }
         .pad-btn {
-            transition: all 0.1s;
+            @apply transition-all duration-100;
         }
         .pad-btn:active {
-            transform: scale(0.95);
-            background-color: #FF2E00;
-            box-shadow: 0 0 15px #FF2E00;
+            @apply scale-95 bg-accent-primary shadow-[0_0_15px_#FF2E00];
         }
         .grid-bg {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+        }
+        .dark .grid-bg {
             background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        }
+        .grid-bg {
             background-size: 24px 24px;
             mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         }
@@ -110,6 +128,44 @@
         "ratingValue": "4.8",
         "ratingCount": "156"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Jack Brewer"
+          },
+          "reviewBody": "PadVibe is hands-down the best audio palette I've used. The zero-lag playback makes my podcast transitions seamless, and the interface is incredibly intuitive."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Montez"
+          },
+          "reviewBody": "As a streamer, timing is everything. PadVibe's instant playback and simple organization system have completely elevated my streams. The best audio palette app out there!"
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "David Torres"
+          },
+          "reviewBody": "For live theater sound design, reliability is crucial. PadVibe's audio palette hasn't failed me once. The cross-platform support means I can use it in any venue setup."
+        }
+      ],
       "downloadUrl": "https://github.com/shabeer-wms/padvibe/releases"
     }
     </script>
@@ -131,10 +187,22 @@
                 <img src="assets/logo.png" alt="PadVibe Logo" class="w-10 h-10 rounded-lg object-contain bg-white/5 p-1">
                 <span class="font-bold text-xl tracking-tight">PadVibe</span>
             </div>
-            <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-400">
-                <a href="#features" class="hover:text-white transition-colors">Features</a>
-                <a href="#use-cases" class="hover:text-white transition-colors">Use Cases</a>
-                <a href="https://github.com/shabeer-wms/padvibe" class="hover:text-white transition-colors">GitHub</a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <a href="#features" class="hover:text-black dark:hover:text-white transition-colors">Features</a>
+                <a href="#use-cases" class="hover:text-black dark:hover:text-white transition-colors">Use Cases</a>
+                <a href="https://github.com/shabeer-wms/padvibe" class="hover:text-black dark:hover:text-white transition-colors">GitHub</a>
+                
+                <!-- Theme Toggle -->
+                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-colors" aria-label="Toggle Dark Mode">
+                    <!-- Sun Icon (Show in Dark) -->
+                    <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <!-- Moon Icon (Show in Light) -->
+                    <svg class="w-5 h-5 block dark:hidden text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
             </nav>
         </header>
 
@@ -146,24 +214,24 @@
                 <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-primary/20 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-700"></div>
                 
                 <div class="relative z-10">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-accent-primary mb-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-accent-primary mb-6">
                         <span class="relative flex h-2 w-2">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
                         </span>
                         v1.3.0 Available Now
                     </div>
-                    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tight">
+                    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tight text-gray-900 dark:text-white">
                         Master Your <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Audio Flow.</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-500">Audio Flow.</span>
                     </h1>
-                    <p class="text-gray-400 text-lg max-w-md leading-relaxed">
+                    <p class="text-gray-600 dark:text-gray-400 text-lg max-w-md leading-relaxed">
                         The zero-latency audio palette for professionals. Drag, drop, and trigger sounds instantly. Built for speed.
                     </p>
                 </div>
 
                 <div class="flex gap-4 mt-8 relative z-10">
-                    <a href="https://github.com/shabeer-wms/padvibe/releases/latest" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-colors flex items-center gap-2">
+                    <a href="https://github.com/shabeer-wms/padvibe/releases/latest" class="bg-gray-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                         </svg>
@@ -182,17 +250,17 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="font-bold text-lg mb-1">Blazing Fast</h3>
-                <p class="text-sm text-gray-400">Built with Flutter for native performance on macOS, Windows & Linux.</p>
+                <h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">Blazing Fast</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Built with Flutter for native performance on macOS, Windows & Linux.</p>
             </div>
 
             <!-- 4. Feature Highlight (Bottom Center) -->
             <div class="bento-card rounded-3xl p-6 md:col-span-2 flex items-center justify-between group">
                 <div class="pr-4">
-                    <h3 class="font-bold text-xl mb-2 group-hover:text-accent-primary transition-colors">Integrated Timer</h3>
-                    <p class="text-sm text-gray-400">Keep track of your segments with the built-in floating timer window.</p>
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-accent-primary transition-colors text-gray-900 dark:text-white">Integrated Timer</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Keep track of your segments with the built-in floating timer window.</p>
                 </div>
-                <div class="h-16 w-32 bg-dark-900 rounded-lg border border-white/10 flex items-center justify-center font-mono text-2xl text-accent-primary shadow-[0_0_15px_rgba(255,46,0,0.2)]">
+                <div class="h-16 w-32 bg-gray-100 dark:bg-dark-900 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center font-mono text-2xl text-accent-primary shadow-[0_0_15px_rgba(255,46,0,0.2)]">
                     00:42
                 </div>
             </div>
@@ -201,7 +269,7 @@
             <div class="bento-card rounded-3xl p-6 md:col-span-1 flex flex-col justify-center items-center text-center">
                 <p class="text-xs text-gray-500 mb-4">Open Source Project</p>
                 <div class="flex gap-4">
-                    <a href="https://github.com/shabeer-wms/padvibe" class="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://github.com/shabeer-wms/padvibe" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
                         </svg>
@@ -212,30 +280,30 @@
             <!-- 6. Use Cases (New Row) -->
             <div id="use-cases" class="bento-card rounded-3xl p-8 md:col-span-4 flex flex-col md:flex-row gap-8 items-center">
                 <div class="md:w-1/3">
-                    <h2 class="text-3xl font-bold mb-4">Built for Every Creator</h2>
-                    <p class="text-gray-400">Whether you're live on Twitch, recording a podcast, or managing theater sound, PadVibe adapts to your workflow.</p>
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Built for Every Creator</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Whether you're live on Twitch, recording a podcast, or managing theater sound, PadVibe adapts to your workflow.</p>
                 </div>
                 <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <div class="bg-gray-100 dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/5">
                         <div class="text-accent-primary mb-2">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
                         </div>
-                        <h4 class="font-bold mb-1">Podcasters</h4>
-                        <p class="text-xs text-gray-500">Trigger intros, outros, and effects instantly.</p>
+                        <h4 class="font-bold mb-1 text-gray-900 dark:text-white">Podcasters</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-500">Trigger intros, outros, and effects instantly.</p>
                     </div>
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <div class="bg-gray-100 dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/5">
                         <div class="text-accent-secondary mb-2">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                         </div>
-                        <h4 class="font-bold mb-1">Streamers</h4>
-                        <p class="text-xs text-gray-500">Engage your audience with live sound reactions.</p>
+                        <h4 class="font-bold mb-1 text-gray-900 dark:text-white">Streamers</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-500">Engage your audience with live sound reactions.</p>
                     </div>
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <div class="bg-gray-100 dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/5">
                         <div class="text-purple-500 mb-2">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 3-2 3-2zm0 0v-8"/></svg>
                         </div>
-                        <h4 class="font-bold mb-1">Theater</h4>
-                        <p class="text-xs text-gray-500">Reliable cues for live performance.</p>
+                        <h4 class="font-bold mb-1 text-gray-900 dark:text-white">Theater</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-500">Reliable cues for live performance.</p>
                     </div>
                 </div>
             </div>
@@ -244,24 +312,24 @@
             <div class="bento-card rounded-3xl p-8 md:col-span-4">
                 <div class="flex flex-col md:flex-row gap-8 items-start">
                     <div class="md:w-1/3">
-                        <h2 class="text-3xl font-bold mb-4">Under the Hood</h2>
-                        <p class="text-gray-400 mb-4">Powered by robust technologies to ensure stability and performance across all platforms.</p>
+                        <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Under the Hood</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Powered by robust technologies to ensure stability and performance across all platforms.</p>
                         
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Flutter</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Dart</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">C++</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-gray-600 dark:text-gray-300">Flutter</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-gray-600 dark:text-gray-300">Dart</span>
+                            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-gray-600 dark:text-gray-300">C++</span>
                         </div>
                     </div>
                     
                     <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                         <!-- Desktop & Web -->
                         <div>
-                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
                                 <svg class="w-5 h-5 text-accent-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                 Cross-Platform
                             </h4>
-                            <ul class="space-y-2 text-sm text-gray-400">
+                            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-secondary"></span>Windows, macOS, Linux (GTK)</li>
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-secondary"></span>Web Support</li>
                             </ul>
@@ -269,11 +337,11 @@
 
                         <!-- Audio Engine -->
                         <div>
-                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
                                 <svg class="w-5 h-5 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
                                 Audio Engine
                             </h4>
-                            <ul class="space-y-2 text-sm text-gray-400">
+                            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>SoLoud (flutter_soloud)</li>
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Audio Output Selection</li>
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Audio Session Integration</li>
@@ -282,11 +350,11 @@
 
                         <!-- Native Integration -->
                         <div>
-                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
                                 <svg class="w-5 h-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
                                 Native Features
                             </h4>
-                            <ul class="space-y-2 text-sm text-gray-400">
+                            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Drag & Drop Files</li>
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Native File Picking</li>
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>MIDI Support</li>
@@ -295,11 +363,11 @@
 
                         <!-- Performance -->
                         <div>
-                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
                                 <svg class="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                                 Performance
                             </h4>
-                            <ul class="space-y-2 text-sm text-gray-400">
+                            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Fast State Mgmt (GetX)</li>
                                 <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Zero Latency Playback</li>
                             </ul>
@@ -311,24 +379,24 @@
             <!-- 8. Testimonials (New Row) -->
             <div class="bento-card rounded-3xl p-6 md:col-span-2">
                 <div class="flex items-center gap-4 mb-4">
-                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold">JD</div>
+                    <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-700 dark:text-gray-200">JB</div>
                     <div>
-                        <h4 class="font-bold text-sm">John Doe</h4>
+                        <h4 class="font-bold text-sm text-gray-900 dark:text-white">Jack Brewer</h4>
                         <p class="text-xs text-gray-500">Podcast Host</p>
                     </div>
                 </div>
-                <p class="text-sm text-gray-300 italic">"PadVibe changed my workflow. No more post-production editing for sound effects. It's all live now!"</p>
+                <p class="text-sm text-gray-600 dark:text-gray-300 italic">"PadVibe is hands-down the best audio palette I've used. The zero-lag playback makes my podcast transitions seamless, and the interface is incredibly intuitive."</p>
             </div>
 
             <div class="bento-card rounded-3xl p-6 md:col-span-2">
                 <div class="flex items-center gap-4 mb-4">
-                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold">AS</div>
+                    <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-700 dark:text-gray-200">SM</div>
                     <div>
-                        <h4 class="font-bold text-sm">Alice Smith</h4>
+                        <h4 class="font-bold text-sm text-gray-900 dark:text-white">Sarah Montez</h4>
                         <p class="text-xs text-gray-500">Twitch Partner</p>
                     </div>
                 </div>
-                <p class="text-sm text-gray-300 italic">"The zero latency is real. I hit the button and the sound is there instantly. Love the design too."</p>
+                <p class="text-sm text-gray-600 dark:text-gray-300 italic">"As a streamer, timing is everything. PadVibe's instant playback and simple organization system have completely elevated my streams. The best audio palette app out there!"</p>
             </div>
 
         </div>
