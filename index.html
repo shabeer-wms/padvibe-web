@@ -151,7 +151,7 @@
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
                         </span>
-                        v1.2.0 Available Now
+                        v1.3.0 Available Now
                     </div>
                     <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tight">
                         Master Your <br/>
@@ -280,7 +280,75 @@
                 </div>
             </div>
 
-            <!-- 7. Testimonials (New Row) -->
+            <!-- 7. Technical Stack (New Row) -->
+            <div class="bento-card rounded-3xl p-8 md:col-span-4">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl font-bold mb-4">Under the Hood</h2>
+                        <p class="text-gray-400 mb-4">Powered by robust technologies to ensure stability and performance across all platforms.</p>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Flutter</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Dart</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">C++</span>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                        <!-- Desktop & Web -->
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-accent-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                Cross-Platform
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-secondary"></span>Windows, macOS, Linux (GTK)</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-secondary"></span>Web Support</li>
+                            </ul>
+                        </div>
+
+                        <!-- Audio Engine -->
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                                Audio Engine
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>SoLoud (flutter_soloud)</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Audio Output Selection</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Audio Session Integration</li>
+                            </ul>
+                        </div>
+
+                        <!-- Native Integration -->
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                                Native Features
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Drag & Drop Files</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Native File Picking</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>MIDI Support</li>
+                            </ul>
+                        </div>
+
+                        <!-- Performance -->
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Performance
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Fast State Mgmt (GetX)</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Zero Latency Playback</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Testimonials (New Row) -->
             <div class="bento-card rounded-3xl p-6 md:col-span-2">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold">JD</div>
