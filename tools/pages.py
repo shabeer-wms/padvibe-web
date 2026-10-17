@@ -469,6 +469,9 @@ curl http://localhost:9696/stop_all</code></pre></div>
 # ── Changelog ───────────────────────────────────────────────────────────────
 
 RELEASES = [
+    ("1.10.1", "2026-10-17", [
+        "Fixed: Settings showed a wrong local API address (<code>/api/v1/state</code>). It now shows the working <code>/state</code> endpoint.",
+    ]),
     ("1.10.0", "2026-10-17", [
         "Much faster start: the audio engine starts in about a second after the first launch (it took around 20 seconds).",
         "Redesigned interface: a sectioned Settings dialog, one tabbed Pad settings dialog, a four-item pad menu, refreshed light and dark themes and colourful pads.",
