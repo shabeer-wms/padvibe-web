@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /marketing/
 
-Sitemap: https://padvibe.com/sitemap.xml
+Sitemap: https://padvibe.pro26.in/sitemap.xml

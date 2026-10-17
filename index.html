@@ -1,824 +1,156 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PadVibe | The Premium Audio Palette for Creators</title>
-    <meta
-      name="description"
-      content="PadVibe is the ultimate zero-latency audio palette for podcasters, streamers, and theater professionals. Instant playback, premium design, and cross-platform support."
-    />
-    <meta
-      name="keywords"
-      content="audio palette, sound board, padvibe, podcast tools, streaming audio, sound effects, jingle palette, zero latency"
-    />
-    <meta name="author" content="PadVibe Team" />
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PadVibe: Free Soundboard App for macOS, Windows &amp; Linux</title>
+<meta name="description" content="PadVibe is a free soundboard app. Drop in audio, hit a pad, and it plays. MIDI learn, mixer faders, per-pad output routing and a local API.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://padvibe.pro26.in/">
+<meta name="theme-color" content="#09090b">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PadVibe">
+<meta property="og:title" content="PadVibe: Free Soundboard App for macOS, Windows &amp; Linux">
+<meta property="og:description" content="PadVibe is a free soundboard app. Drop in audio, hit a pad, and it plays. MIDI learn, mixer faders, per-pad output routing and a local API.">
+<meta property="og:url" content="https://padvibe.pro26.in/">
+<meta property="og:image" content="https://padvibe.pro26.in/assets/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PadVibe: colourful sound pads, mixer faders and level meters">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PadVibe: Free Soundboard App for macOS, Windows &amp; Linux">
+<meta name="twitter:description" content="PadVibe is a free soundboard app. Drop in audio, hit a pad, and it plays. MIDI learn, mixer faders, per-pad output routing and a local API.">
+<meta name="twitter:image" content="https://padvibe.pro26.in/assets/og/default.png">
+<script>(function(){var t=null;try{t=localStorage.getItem('pv-theme')}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t)})()</script>
+<link rel="preload" href="/assets/site.dc52f754ee.css" as="style">
+<link rel="stylesheet" href="/assets/site.dc52f754ee.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PadVibe","url":"https://padvibe.pro26.in/","applicationCategory":"MultimediaApplication","applicationSubCategory":"Soundboard","operatingSystem":"macOS, Windows, Linux","description":"PadVibe is a free desktop soundboard for podcasters, streamers and live shows, with MIDI learn, mixer faders, per-pad output routing and a local HTTP API.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://padvibe.pro26.in/download/","installUrl":"https://padvibe.pro26.in/download/","softwareHelp":"https://padvibe.pro26.in/developers/","isAccessibleForFree":true,"image":"https://padvibe.pro26.in/assets/og/default.png","screenshot":["https://padvibe.pro26.in/assets/img/app-home-dark.webp","https://padvibe.pro26.in/assets/img/app-pad-settings-dark.webp"],"featureList":["Instant playback from memory","MIDI learn for pads and faders, including RODECaster Pro","Mixer faders linked to groups of pads","Per-pad output device and channel routing","Level meters with a soft limiter","Local HTTP API, webhooks and a timer overlay for OBS","Tabs, drag and drop, keyboard shortcuts, light and dark themes"],"sameAs":["https://github.com/shabeer-wms/padvibe"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PadVibe","url":"https://padvibe.pro26.in/","logo":"https://padvibe.pro26.in/assets/icons/icon-512.png","sameAs":["https://github.com/shabeer-wms/padvibe"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PadVibe","url":"https://padvibe.pro26.in/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is PadVibe?","acceptedAnswer":{"@type":"Answer","text":"PadVibe is a free desktop soundboard. You drop audio files onto pads, then play them with a click, a keyboard key, a MIDI controller or a URL. It is built for podcasters, streamers and live shows."}},{"@type":"Question","name":"Is PadVibe free?","acceptedAnswer":{"@type":"Answer","text":"Yes. PadVibe is free to download and use, with no account, subscription or ads. The source code is public on GitHub."}},{"@type":"Question","name":"Which systems does it run on?","acceptedAnswer":{"@type":"Answer","text":"macOS (Apple Silicon and Intel), Windows 10 and 11 (64-bit) and Linux (64-bit). The downloads are on the download page."}},{"@type":"Question","name":"Which audio formats can I use?","acceptedAnswer":{"@type":"Answer","text":"MP3, WAV, OGG and FLAC."}},{"@type":"Question","name":"Does it work with MIDI controllers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use MIDI learn to map any pad or mixer fader to any MIDI note or control change. It was built with RODECaster Pro pads in mind, and it also understands program change messages."}},{"@type":"Question","name":"Can I send sound to OBS, Zoom or my mixer?","acceptedAnswer":{"@type":"Answer","text":"Each pad can use its own output device, and on multi-channel interfaces its own channels. To send PadVibe into another app, choose a virtual audio device such as BlackHole on macOS or VB-Cable on Windows as the output and capture that in the other app."}},{"@type":"Question","name":"How fast is it?","acceptedAnswer":{"@type":"Answer","text":"Audio is decoded once and then played from memory, so a pad starts as soon as you hit it. Output latency is typically 20 to 60 milliseconds, depending on your audio interface."}},{"@type":"Question","name":"Does it record or collect my data?","acceptedAnswer":{"@type":"Answer","text":"No. PadVibe only plays audio. It has no account system and no analytics. Your sounds and settings stay on your computer. See the privacy page."}}]}</script>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="announce" id="announce" data-id="1.10"><div class="container"><span><span class="long">PadVibe 1.10 is out: faster startup, a redesigned interface, and Windows and Linux builds.</span><span class="short">PadVibe 1.10 is out.</span> <a href="/changelog/">See what's new</a></span><button type="button" aria-label="Dismiss announcement">&times;</button></div></div>
+<header class="site-header"><div class="container">
+<a class="brand" href="/" aria-label="PadVibe home"><img src="/assets/icons/logo-mark.svg" width="34" height="23" alt="">PadVibe</a>
+<nav class="nav" id="nav" aria-label="Main" data-open="false"><a href="/features/">Features</a><a href="/use-cases/">Use cases</a><a href="/developers/">Developers</a><a href="/changelog/">Changelog</a><a href="https://github.com/shabeer-wms/padvibe" rel="noopener">GitHub</a></nav>
+<div class="header-actions">
+<a class="btn btn-primary btn-sm" href="/download/">Download</a>
+<button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light and dark theme"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.900 4.900l1.400 1.400m11.400 11.400 1.400 1.400M2 12h2m16 0h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
+<button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+</div></div></header>
+<main id="main">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://padvibe.com/" />
-    <meta property="og:title" content="PadVibe | The Premium Audio Palette" />
-    <meta
-      property="og:description"
-      content="Master your audio flow with PadVibe. The zero-latency audio palette for professionals."
-    />
-    <meta
-      property="og:image"
-      content="https://padvibe.com/og-image-v2.png"
-    />
+<section class="hero"><div class="container">
+<div class="hero-grid">
+<div>
+<span class="pill"><span class="dot"></span>Free and open source &middot; <span data-version>latest release</span></span>
+<h1 style="margin-top:18px">Instant sound pads for <span class="grad">podcasts, streams and live shows.</span></h1>
+<p class="lead">PadVibe is a free desktop soundboard. Drop in your audio, hit a pad, and it plays. Trigger it from the keyboard, a MIDI controller or a URL.</p>
+<div class="cta-row">
+<a class="btn btn-primary btn-lg" href="/download/" data-dl-primary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg> <span>Download for <span data-os-label>your computer</span></span></a>
+<a class="btn btn-lg" href="https://github.com/shabeer-wms/padvibe" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> View on GitHub</a>
+</div>
+<p class="fine">macOS, Windows and Linux &middot; No account &middot; MP3, WAV, OGG and FLAC</p>
+</div>
+<div class="padbox" role="group" aria-label="Try the pads">
+<div class="padbox-head"><strong>Try it</strong><span>Click the pads, or press the keys shown</span></div>
+<div class="padgrid" id="padgrid"><button class="pad" type="button" style="background:#29397a" data-sound="kick" data-key="1" data-dur="0.5" aria-label="Kick (key 1)"><kbd>1</kbd><span>Kick</span><i class="bar"></i></button><button class="pad" type="button" style="background:#3a9db5" data-sound="snare" data-key="2" data-dur="0.4" aria-label="Snare (key 2)"><kbd>2</kbd><span>Snare</span><i class="bar"></i></button><button class="pad" type="button" style="background:#f19237" data-sound="hat" data-key="3" data-dur="0.2" aria-label="Hat (key 3)"><kbd>3</kbd><span>Hat</span><i class="bar"></i></button><button class="pad" type="button" style="background:#de5b5b" data-sound="clap" data-key="4" data-dur="0.35" aria-label="Clap (key 4)"><kbd>4</kbd><span>Clap</span><i class="bar"></i></button><button class="pad" type="button" style="background:#245b9a" data-sound="airhorn" data-key="q" data-dur="0.9" aria-label="Airhorn (key Q)"><kbd>Q</kbd><span>Airhorn</span><i class="bar"></i></button><button class="pad" type="button" style="background:#be2473" data-sound="rimshot" data-key="w" data-dur="0.4" aria-label="Rimshot (key W)"><kbd>W</kbd><span>Rimshot</span><i class="bar"></i></button><button class="pad" type="button" style="background:#2574ab" data-sound="ding" data-key="e" data-dur="1.2" aria-label="Ding (key E)"><kbd>E</kbd><span>Ding</span><i class="bar"></i></button><button class="pad" type="button" style="background:#82408a" data-sound="whoosh" data-key="r" data-dur="0.8" aria-label="Whoosh (key R)"><kbd>R</kbd><span>Whoosh</span><i class="bar"></i></button><button class="pad" type="button" style="background:#29397a" data-sound="buzzer" data-key="a" data-dur="0.6" aria-label="Buzzer (key A)"><kbd>A</kbd><span>Buzzer</span><i class="bar"></i></button><button class="pad" type="button" style="background:#3a9db5" data-sound="laser" data-key="s" data-dur="0.35" aria-label="Laser (key S)"><kbd>S</kbd><span>Laser</span><i class="bar"></i></button><button class="pad" type="button" style="background:#f19237" data-sound="arp" data-key="d" data-dur="0.6" aria-label="Chime (key D)"><kbd>D</kbd><span>Chime</span><i class="bar"></i></button><button class="pad" type="button" style="background:#de5b5b" data-sound="roll" data-key="f" data-dur="0.9" aria-label="Drumroll (key F)"><kbd>F</kbd><span>Drumroll</span><i class="bar"></i></button></div>
+<p class="pad-note">These sounds are synthesized in your browser. In PadVibe you play your own files.</p>
+</div>
+</div>
+<div class="hero-shot"><div class="window"><div class="window-bar"><i></i><i></i><i></i><span>PadVibe</span></div><img class="shot-dark" src="/assets/img/app-home-dark.webp" srcset="/assets/img/app-home-dark-720.webp 720w, /assets/img/app-home-dark.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="900" alt="PadVibe main window: a grid of colourful sound pads with waveforms, a mixer with faders, master level meters and a countdown timer" fetchpriority="high"><img class="shot-light" src="/assets/img/app-home-light.webp" srcset="/assets/img/app-home-light-720.webp 720w, /assets/img/app-home-light.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="900" alt="PadVibe main window: a grid of colourful sound pads with waveforms, a mixer with faders, master level meters and a countdown timer" fetchpriority="high"></div></div>
+</div></section>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://padvibe.com/" />
-    <meta
-      property="twitter:title"
-      content="PadVibe | The Premium Audio Palette"
-    />
-    <meta
-      property="twitter:description"
-      content="Master your audio flow with PadVibe. The zero-latency audio palette for professionals."
-    />
-    <meta
-      property="twitter:image"
-      content="https://padvibe.com/og-image-v2.png"
-    />
+<section class="section"><div class="container">
+<div class="stats">
+<div class="stat"><b>3 platforms</b><span>macOS, Windows, Linux</span></div>
+<div class="stat"><b>No account</b><span>Nothing to sign up for</span></div>
+<div class="stat"><b>20 to 60 ms</b><span>Typical output latency*</span></div>
+<div class="stat"><b>Open source</b><span>Code is public on GitHub</span></div>
+</div>
+<p class="fine" style="margin-top:12px">*Depends on your audio interface and buffer. Measured at 21 to 63 ms on built-in, USB and virtual devices on macOS.</p>
+</div></section>
 
-    <link rel="canonical" href="https://padvibe.com" />
-    <link rel="icon" href="assets/logo.png" sizes="any" />
+<section class="section alt" id="features"><div class="container">
+<div class="section-head"><span class="eyebrow">Features</span><h2>Everything a live audio rig needs, nothing it doesn't.</h2>
+<p>Built for people who trigger sound while doing something else: talking, streaming, running a show.</p></div>
+<div class="grid g3"><div class="card hover"><div class="ico" style="background:#f19237"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Instant playback</h3><p>Audio is decoded once and played from memory, so a pad fires the moment you hit it. Loop, restart and seek any pad.</p></div><div class="card hover"><div class="ico" style="background:#be2473"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 5v8m4-8v8m4-8v8M6 19v-3m4 3v-3m4 3v-3m4 3v-3"/></svg></div><h3>MIDI learn</h3><p>Map any pad or fader to any MIDI note or control. RODECaster Pro pads are supported, and so are program change messages.</p></div><div class="card hover"><div class="ico" style="background:#245b9a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21v-7m0-4V3m8 18v-9m0-4V3m8 18v-5m0-4V3M1 14h6m2-6h6m2 8h6"/></svg></div><h3>Mixer faders</h3><p>Link groups of pads to a shared fader and drive it from one physical slider on your controller.</p></div><div class="card hover"><div class="ico" style="background:#3a9db5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h8a3 3 0 0 0 0-6H8a3 3 0 0 1 0-6h8"/></svg></div><h3>Output routing</h3><p>Send each pad to its own audio interface or to specific channels. Built for multi-channel rigs.</p></div><div class="card hover"><div class="ico" style="background:#82408a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6 20v-6m4 6V8m4 12v-9m4 9V4"/></svg></div><h3>Meters and limiter</h3><p>Live left and right level meters with peak hold, and a soft limiter on the master bus so loud pads do not clip.</p></div><div class="card hover"><div class="ico" style="background:#de5b5b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div><h3>Local API</h3><p>Read state, trigger pads and change volume over HTTP, get webhooks, and show a countdown in OBS.</p></div></div>
+<p style="margin-top:28px"><a class="btn" href="/features/">See all features &rarr;</a></p>
+</div></section>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+<section class="section"><div class="container">
+<div class="split">
+<div><span class="eyebrow">Set up in seconds</span><h2>Drop a file on a pad. That is the whole setup.</h2>
+<p style="color:var(--muted)">Each pad has a name, a colour, a loop switch and its own volume. Open <strong>Pad settings</strong> to set a keyboard key, learn a MIDI control, pick an output device or link the pad to a fader. Everything for one pad lives in one place.</p>
+<ul class="checks"><li><strong>Drag and drop</strong> files straight onto pads, or pick several at once.</li><li><strong>Keyboard keys and MIDI</strong> for hands-free triggering.</li><li><strong>Tabs</strong> keep a whole show organised: one bank per scene or episode.</li><li><strong>Background pads</strong> stay out of the API and the countdown, ideal for long beds.</li></ul></div>
+<div><div class="window"><div class="window-bar"><i></i><i></i><i></i><span>PadVibe</span></div><img class="shot-dark" src="/assets/img/app-pad-settings-dark.webp" width="640" height="470" alt="PadVibe pad settings dialog with Playback, Triggers and Output tabs showing keyboard key and MIDI control assignment" loading="lazy" decoding="async"><img class="shot-light" src="/assets/img/app-pad-settings-light.webp" width="640" height="470" alt="PadVibe pad settings dialog with Playback, Triggers and Output tabs showing keyboard key and MIDI control assignment" loading="lazy" decoding="async"></div></div>
+</div></div></section>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-              mono: ["JetBrains Mono", "monospace"],
-            },
-            colors: {
-              dark: {
-                900: "#0a0a0a",
-                800: "#121212",
-                700: "#1e1e1e",
-                600: "#2d2d2d",
-              },
-              accent: {
-                primary: "#FF2E00",
-                secondary: "#3B82F6",
-              },
-            },
-            animation: {
-              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-            },
-          },
-        },
-      };
-    </script>
-    <script>
-      // Check local storage or system preference
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+<section class="section alt"><div class="container">
+<div class="split rev">
+<div><div class="window"><div class="window-bar"><i></i><i></i><i></i><span>PadVibe</span></div><img class="shot-dark" src="/assets/img/app-settings-dark.webp" width="1100" height="760" alt="PadVibe settings screen listing MIDI input devices with Connect buttons" loading="lazy" decoding="async"><img class="shot-light" src="/assets/img/app-settings-light.webp" width="1100" height="760" alt="PadVibe settings screen listing MIDI input devices with Connect buttons" loading="lazy" decoding="async"></div></div>
+<div><span class="eyebrow">Designed to stay out of the way</span><h2>A clear interface, in light or dark.</h2>
+<p style="color:var(--muted)">Settings are grouped into General, Audio, MIDI, Integrations and Diagnostics. The layout adapts from a small window to a full screen, and the theme follows your system or your choice.</p>
+<ul class="checks"><li>Responsive layout that rearranges as the window changes size.</li><li>A built-in <strong>Diagnostics</strong> view shows the audio engine status and where the logs are.</li><li>The audio engine restarts itself if it ever stops responding.</li></ul></div>
+</div></div></section>
 
-      function toggleTheme() {
-        if (document.documentElement.classList.contains("dark")) {
-          document.documentElement.classList.remove("dark");
-          localStorage.theme = "light";
-        } else {
-          document.documentElement.classList.add("dark");
-          localStorage.theme = "dark";
-        }
-      }
-    </script>
+<section class="section"><div class="container">
+<div class="section-head"><span class="eyebrow">Use cases</span><h2>Made for people who play sound live.</h2></div>
+<div class="grid g3"><a class="card" href="/use-cases/podcasting/"><div class="ico" style="background:#f19237"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0m-7 7v4"/></svg></div><h3>Podcasting</h3><p>Intros, outros, stingers and beds, one tap away while you talk.</p><span class="more">Learn more &rarr;</span></a><a class="card" href="/use-cases/streaming/"><div class="ico" style="background:#be2473"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8m-4-4v4m-3-9 6-3-6-3z"/></svg></div><h3>Streaming</h3><p>Sound effects and alerts from a key, a MIDI pad or a URL.</p><span class="more">Learn more &rarr;</span></a><a class="card" href="/use-cases/theatre/"><div class="ico" style="background:#245b9a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div><h3>Theatre and live events</h3><p>Scene banks, a countdown timer and per-pad output routing.</p><span class="more">Learn more &rarr;</span></a></div>
+</div></section>
 
-    <style type="text/tailwindcss">
-      @layer base {
-        body {
-          @apply bg-gray-50 text-gray-900 dark:bg-[#050505] dark:text-white transition-colors duration-300;
-        }
-      }
-      .bento-card {
-        @apply bg-white/60 dark:bg-[#1e1e1e]/40 backdrop-blur-xl border border-gray-200 dark:border-white/10 transition-all duration-300;
-      }
-      .bento-card:hover {
-        @apply border-gray-300 dark:border-white/15 -translate-y-0.5 shadow-xl dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)];
-      }
-      .pad-btn {
-        @apply transition-all duration-100;
-      }
-      .pad-btn:active {
-        @apply scale-95 bg-accent-primary shadow-[0_0_15px_#FF2E00];
-      }
-      .grid-bg {
-        background-image: radial-gradient(
-          rgba(0, 0, 0, 0.1) 1px,
-          transparent 1px
-        );
-      }
-      .dark .grid-bg {
-        background-image: radial-gradient(
-          rgba(255, 255, 255, 0.1) 1px,
-          transparent 1px
-        );
-      }
-      .grid-bg {
-        background-size: 24px 24px;
-        mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-      }
-    </style>
+<section class="section alt"><div class="container">
+<div class="section-head"><span class="eyebrow">How it works</span><h2>From download to first sound in three steps.</h2></div>
+<div class="steps">
+<div class="step"><h3>Add your sounds</h3><p>Drag audio files onto pads. PadVibe keeps its own copy, so moving the original never breaks a pad.</p></div>
+<div class="step"><h3>Choose your triggers</h3><p>Set a keyboard key, or press Learn and hit a button on your MIDI controller.</p></div>
+<div class="step"><h3>Play</h3><p>Click, press or tap. Route each pad to the right output and balance everything with faders.</p></div>
+</div></div></section>
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "PadVibe",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "macOS, Windows, Linux",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "PadVibe is the ultimate audio palette app for podcasters, streamers, and creators who demand instant, zero-lag playback. Featuring RODECaster Pro MIDI support, Homebrew install, and a built-in live timer overlay.",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "156"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5"
-            },
-            "author": {
-              "@type": "Person",
-              "name": "Jack Brewer"
-            },
-            "reviewBody": "PadVibe is hands-down the best audio palette I've used. The zero-lag playback makes my podcast transitions seamless, and the interface is incredibly intuitive."
-          },
-          {
-            "@type": "Review",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5"
-            },
-            "author": {
-              "@type": "Person",
-              "name": "Sarah Montez"
-            },
-            "reviewBody": "As a streamer, timing is everything. PadVibe's instant playback and simple organization system have completely elevated my streams. The best audio palette app out there!"
-          },
-          {
-            "@type": "Review",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5"
-            },
-            "author": {
-              "@type": "Person",
-              "name": "David Torres"
-            },
-            "reviewBody": "For live theater sound design, reliability is crucial. PadVibe's audio palette hasn't failed me once. The cross-platform support means I can use it in any venue setup."
-          }
-        ],
-        "downloadUrl": "https://github.com/shabeer-wms/padvibe/releases"
-      }
-    </script>
-  </head>
-  <body
-    class="antialiased selection:bg-accent-primary selection:text-white overflow-x-hidden"
-  >
-    <!-- Background Grid -->
-    <div class="fixed inset-0 grid-bg pointer-events-none z-[-1]"></div>
+<section class="section"><div class="container">
+<div class="split">
+<div><span class="eyebrow">For developers and tinkerers</span><h2>Control it from anything that can open a URL.</h2>
+<p style="color:var(--muted)">PadVibe runs a small HTTP server on your machine. Read the full state, trigger pads, set volumes, switch tabs, or have PadVibe post its state to your own webhook. It also serves a countdown overlay you can drop into OBS as a Browser Source.</p>
+<p><a class="btn" href="/developers/">Read the API docs &rarr;</a></p></div>
+<div><div class="codewrap"><button class="copy" type="button">Copy</button><pre><code><span class="tok-c"># read the live state</span>
+curl http://localhost:9696/state
 
-    <!-- Glow Effects -->
-    <div
-      class="fixed top-0 left-1/4 w-96 h-96 bg-accent-primary/10 rounded-full blur-[128px] pointer-events-none"
-    ></div>
-    <div
-      class="fixed bottom-0 right-1/4 w-96 h-96 bg-accent-secondary/10 rounded-full blur-[128px] pointer-events-none"
-    ></div>
+<span class="tok-c"># play the first pad, then stop everything</span>
+curl http://localhost:9696/play/0
+curl http://localhost:9696/stop_all
 
-    <main
-      class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center"
-    >
-      <!-- Header / Nav -->
-      <header class="flex justify-between items-center mb-12 fade-in">
-        <div class="flex items-center gap-3">
-          <img
-            src="assets/logo.png"
-            alt="PadVibe Logo"
-            class="w-10 h-10 rounded-lg object-contain bg-white/5 p-1"
-          />
-          <span class="font-bold text-xl tracking-tight">PadVibe</span>
-        </div>
-        <nav
-          class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400"
-        >
-          <a
-            href="#features"
-            class="hover:text-black dark:hover:text-white transition-colors"
-            >Features</a
-          >
-          <a
-            href="#use-cases"
-            class="hover:text-black dark:hover:text-white transition-colors"
-            >Use Cases</a
-          >
-          <a
-            href="https://github.com/shabeer-wms/padvibe"
-            class="hover:text-black dark:hover:text-white transition-colors"
-            >GitHub</a
-          >
+<span class="tok-c"># set the master volume to 60%</span>
+curl http://localhost:9696/volume/master/0.6</code></pre></div></div>
+</div></div></section>
 
-          <!-- Theme Toggle -->
-          <button
-            onclick="toggleTheme()"
-            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
-            aria-label="Toggle Dark Mode"
-          >
-            <!-- Sun Icon (Show in Dark) -->
-            <svg
-              class="w-5 h-5 hidden dark:block text-yellow-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-              />
-            </svg>
-            <!-- Moon Icon (Show in Light) -->
-            <svg
-              class="w-5 h-5 block dark:hidden text-gray-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              />
-            </svg>
-          </button>
-        </nav>
-      </header>
-
-      <!-- Bento Grid Layout -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4"
-      >
-        <!-- 1. Hero Card (Large, Top Left) -->
-        <div
-          class="bento-card rounded-3xl p-8 md:col-span-4 md:row-span-2 flex flex-col justify-between relative overflow-hidden group"
-        >
-          <div
-            class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-primary/20 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-700"
-          ></div>
-
-          <div class="relative z-10">
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-accent-primary mb-6"
-            >
-              <span class="relative flex h-2 w-2">
-                <span
-                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"
-                ></span>
-                <span
-                  class="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"
-                ></span>
-              </span>
-              v1.9.0 — Now on Homebrew
-            </div>
-            <h1
-              class="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tight text-gray-900 dark:text-white"
-            >
-              Master Your <br />
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-500"
-                >Audio Flow.</span
-              >
-            </h1>
-            <p
-              class="text-gray-600 dark:text-gray-400 text-lg max-w-md leading-relaxed"
-            >
-              Professional-grade, cross-platform audio sample triggering with a
-              unique dual-engine architecture. Zero-latency playback.
-              RODECaster Pro MIDI Support. Now available on Homebrew.
-            </p>
-          </div>
-
-          <div class="flex flex-wrap gap-4 mt-8 relative z-10">
-            <a
-              href="https://github.com/shabeer-wms/padvibe/releases/latest"
-              class="bg-gray-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center gap-2"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-              Download
-            </a>
-            <div class="flex flex-col justify-center gap-1">
-              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">Also available on Homebrew</span>
-              <code class="text-xs bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg px-3 py-2 font-mono text-gray-700 dark:text-gray-300 select-all">
-                brew tap shabeer-wms/padvibe &amp;&amp; brew install --cask padvibe
-              </code>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Dual-Engine Architecture -->
-        <div
-          class="bento-card rounded-3xl p-6 md:col-span-2 flex flex-col justify-center group"
-        >
-          <div
-            class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-              />
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">
-            Dual-Engine Architecture
-          </h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-            Flutter UI + Python Sidecar for high-performance audio/MIDI
-            processing.
-          </p>
-          <div class="flex wrap gap-2">
-            <span
-              class="px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400"
-              >Flutter</span
-            >
-            <span
-              class="px-2 py-0.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-xs font-mono text-yellow-400"
-              >Python</span
-            >
-          </div>
-        </div>
-
-        <!-- 4. Professional Audio Metering -->
-        <div
-          class="bento-card rounded-3xl p-6 md:col-span-1 flex flex-col justify-center group"
-        >
-          <div
-            class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-400"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
-              />
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">
-            Pro Metering
-          </h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            High-precision L/R master meter for real-time audio monitoring.
-          </p>
-        </div>
-
-        <!-- 5. Local API & Background Pads -->
-        <div
-          class="bento-card rounded-3xl p-6 md:col-span-1 flex flex-col justify-center group relative overflow-hidden"
-        >
-          <div
-            class="w-10 h-10 bg-accent-secondary/20 rounded-lg flex items-center justify-center mb-4 text-accent-secondary"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">
-            Local API & BG
-          </h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            Exclude background pads from API for cleaner stream automation.
-          </p>
-        </div>
-
-        <!-- Homebrew Card -->
-        <div
-          class="bento-card rounded-3xl p-6 md:col-span-1 flex flex-col justify-center group"
-        >
-          <div
-            class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 text-orange-400 text-lg font-bold"
-          >
-            🍺
-          </div>
-          <h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">
-            Homebrew
-          </h3>
-          <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">
-            Install on macOS with one command.
-          </p>
-          <code class="text-xs bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-lg px-3 py-2 font-mono text-gray-700 dark:text-gray-300 break-all select-all leading-relaxed">
-            brew tap shabeer-wms/padvibe<br>brew install --cask padvibe
-          </code>
-        </div>
-
-        <!-- 6. Use Cases (New Row) -->
-        <div
-          id="use-cases"
-          class="bento-card rounded-3xl p-8 md:col-span-4 flex flex-col md:flex-row gap-8 items-center"
-        >
-          <div class="md:w-1/3">
-            <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              Built for Every Creator
-            </h2>
-            <p class="text-gray-600 dark:text-gray-400">
-              Whether you're live on Twitch, recording a podcast, or managing
-              theater sound, PadVibe adapts to your workflow.
-            </p>
-          </div>
-          <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-            <div
-              class="bg-gray-100 dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/5"
-            >
-              <div class="text-accent-primary mb-2">
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                  />
-                </svg>
-              </div>
-              <h4 class="font-bold mb-1 text-gray-900 dark:text-white">
-                Podcasters
-              </h4>
-              <p class="text-xs text-gray-600 dark:text-gray-500">
-                Trigger intros, outros, and effects instantly.
-              </p>
-            </div>
-            <div
-              class="bg-gray-100 dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/5"
-            >
-              <div class="text-accent-secondary mb-2">
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h4 class="font-bold mb-1 text-gray-900 dark:text-white">
-                Streamers
-              </h4>
-              <p class="text-xs text-gray-600 dark:text-gray-500">
-                Engage your audience with live sound reactions.
-              </p>
-            </div>
-            <div
-              class="bg-gray-100 dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/5"
-            >
-              <div class="text-purple-500 mb-2">
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 3-2 3-2zm0 0v-8"
-                  />
-                </svg>
-              </div>
-              <h4 class="font-bold mb-1 text-gray-900 dark:text-white">
-                Theater
-              </h4>
-              <p class="text-xs text-gray-600 dark:text-gray-500">
-                Reliable cues for live performance.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7. Technical Stack (New Row) -->
-        <div class="bento-card rounded-3xl p-8 md:col-span-4" id="features">
-          <div class="flex flex-col md:flex-row gap-8 items-start">
-            <div class="md:w-1/3">
-              <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-                Under the Hood
-              </h2>
-              <p class="text-gray-600 dark:text-gray-400 mb-4">
-                Professional-grade dual-engine architecture delivers the
-                low-latency performance expected by industry professionals.
-              </p>
-
-              <div class="flex wrap gap-2">
-                <span
-                  class="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-gray-600 dark:text-gray-300"
-                  >Flutter</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-gray-600 dark:text-gray-300"
-                  >Python</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-gray-600 dark:text-gray-300"
-                  >Dart</span
-                >
-                <span
-                  class="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-mono text-gray-600 dark:text-gray-300"
-                  >C++</span
-                >
-              </div>
-            </div>
-
-            <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-              <!-- Desktop & Web -->
-              <div>
-                <h4
-                  class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white"
-                >
-                  <svg
-                    class="w-5 h-5 text-accent-secondary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  Cross-Platform
-                </h4>
-                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent-secondary"
-                    ></span
-                    >Windows, macOS, Linux (GTK)
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent-secondary"
-                    ></span
-                    >Web Support
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Python Sidecar Engine -->
-              <div>
-                <h4
-                  class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white"
-                >
-                  <svg
-                    class="w-5 h-5 text-accent-primary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-                    />
-                  </svg>
-                  Python Sidecar
-                </h4>
-                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent-primary"
-                    ></span
-                    >High-Performance Audio Engine
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent-primary"
-                    ></span
-                    >Real-time MIDI Processing
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent-primary"
-                    ></span
-                    >Local HTTP API (Port 9696)
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Native Integration -->
-              <div>
-                <h4
-                  class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white"
-                >
-                  <svg
-                    class="w-5 h-5 text-purple-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                    />
-                  </svg>
-                  Native Features
-                </h4>
-                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span
-                    >Drag & Drop Files
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span
-                    >Native File Picking
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span
-                    >MIDI Support
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Performance & Distribution -->
-              <div>
-                <h4
-                  class="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900 dark:text-white"
-                >
-                  <svg
-                    class="w-5 h-5 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                  Distribution
-                </h4>
-                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    Homebrew Cask (macOS)
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    DMG Installer
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    Auto-update via CI
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. Testimonials (New Row) -->
-        <div class="bento-card rounded-3xl p-6 md:col-span-2">
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-700 dark:text-gray-200"
-            >
-              JB
-            </div>
-            <div>
-              <h4 class="font-bold text-sm text-gray-900 dark:text-white">
-                Jack Brewer
-              </h4>
-              <p class="text-xs text-gray-500">Podcast Host</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 italic">
-            "PadVibe is hands-down the best audio palette I've used. The
-            zero-lag playback makes my podcast transitions seamless, and the
-            interface is incredibly intuitive."
-          </p>
-        </div>
-
-        <div class="bento-card rounded-3xl p-6 md:col-span-2">
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-700 dark:text-gray-200"
-            >
-              SM
-            </div>
-            <div>
-              <h4 class="font-bold text-sm text-gray-900 dark:text-white">
-                Sarah Montez
-              </h4>
-              <p class="text-xs text-gray-500">Twitch Partner</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 italic">
-            "As a streamer, timing is everything. PadVibe's instant playback and
-            simple organization system have completely elevated my streams. The
-            best audio palette app out there!"
-          </p>
-        </div>
-      </div>
-
-      <footer
-        class="mt-16 pb-8 text-center text-xs text-gray-600 border-t border-white/5 pt-8"
-      >
-        <div class="flex justify-center gap-6 mb-4">
-          <a href="#" class="hover:text-white transition-colors"
-            >Privacy Policy</a
-          >
-          <a href="#" class="hover:text-white transition-colors"
-            >Terms of Service</a
-          >
-          <a href="#" class="hover:text-white transition-colors">Contact</a>
-        </div>
-        <p>
-          &copy; 2026 PadVibe. Designed with
-          <span class="text-accent-primary">♥</span> for creators.
-        </p>
-      </footer>
-    </main>
-  </body>
+<section class="section alt"><div class="narrow">
+<div class="section-head center"><span class="eyebrow">FAQ</span><h2>Questions, answered.</h2></div>
+<div class="faq"><details><summary>What is PadVibe?</summary><div><p>PadVibe is a free desktop soundboard. You drop audio files onto pads, then play them with a click, a keyboard key, a MIDI controller or a URL. It is built for podcasters, streamers and live shows.</p></div></details><details><summary>Is PadVibe free?</summary><div><p>Yes. PadVibe is free to download and use, with no account, subscription or ads. The source code is public on GitHub.</p></div></details><details><summary>Which systems does it run on?</summary><div><p>macOS (Apple Silicon and Intel), Windows 10 and 11 (64-bit) and Linux (64-bit). The downloads are on the <a href="/download/">download page</a>.</p></div></details><details><summary>Which audio formats can I use?</summary><div><p>MP3, WAV, OGG and FLAC.</p></div></details><details><summary>Does it work with MIDI controllers?</summary><div><p>Yes. Use MIDI learn to map any pad or mixer fader to any MIDI note or control change. It was built with RODECaster Pro pads in mind, and it also understands program change messages.</p></div></details><details><summary>Can I send sound to OBS, Zoom or my mixer?</summary><div><p>Each pad can use its own output device, and on multi-channel interfaces its own channels. To send PadVibe into another app, choose a virtual audio device such as BlackHole on macOS or VB-Cable on Windows as the output and capture that in the other app.</p></div></details><details><summary>How fast is it?</summary><div><p>Audio is decoded once and then played from memory, so a pad starts as soon as you hit it. Output latency is typically 20 to 60 milliseconds, depending on your audio interface.</p></div></details><details><summary>Does it record or collect my data?</summary><div><p>No. PadVibe only plays audio. It has no account system and no analytics. Your sounds and settings stay on your computer. See the <a href="/privacy/">privacy page</a>.</p></div></details></div>
+</div></section>
+<section class="section"><div class="container"><div class="cta-band">
+<h2>Free to download. Ready in a minute.</h2><p>No account, no subscription, no tracking. Install it, drop in a few sounds and hit a pad.</p>
+<div class="cta-row"><a class="btn btn-primary btn-lg" href="/download/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg> Download PadVibe</a><a class="btn btn-lg" href="https://github.com/shabeer-wms/padvibe" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Star on GitHub</a></div>
+</div></div></section>
+</main>
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div><a class="brand" href="/"><img src="/assets/icons/logo-mark.svg" width="34" height="23" alt="">PadVibe</a>
+<p class="footer-note">A free, open source soundboard for podcasters, streamers and live shows. macOS, Windows and Linux.</p></div>
+<div><h4>Product</h4><ul><li><a href="/features/">Features</a></li><li><a href="/download/">Download</a></li><li><a href="/changelog/">Changelog</a></li><li><a href="/press/">Press kit</a></li></ul></div>
+<div><h4>Use cases</h4><ul><li><a href="/use-cases/podcasting/">Podcasting</a></li><li><a href="/use-cases/streaming/">Streaming</a></li><li><a href="/use-cases/theatre/">Theatre and live events</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="/developers/">Local API</a></li><li><a href="https://github.com/shabeer-wms/padvibe" rel="noopener">GitHub</a></li><li><a href="https://github.com/shabeer-wms/padvibe/issues" rel="noopener">Report an issue</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; <span data-year>2026</span> PadVibe. Made for creators.</span><span>Not affiliated with RODE, Apple, Microsoft or the Linux Foundation. Product names belong to their owners.</span></div>
+</div></footer>
+<script src="/assets/site.4065edfec7.js" defer></script>
+</body>
 </html>

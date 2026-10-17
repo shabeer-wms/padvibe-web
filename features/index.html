@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PadVibe Features: MIDI Learn, Faders, Output Routing &amp; API</title>
+<meta name="description" content="Explore PadVibe: instant playback, MIDI learn with RODECaster Pro support, mixer faders, per-pad output routing, level meters, a countdown timer and a local API.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://padvibe.pro26.in/features/">
+<meta name="theme-color" content="#09090b">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PadVibe">
+<meta property="og:title" content="PadVibe Features: MIDI Learn, Faders, Output Routing &amp; API">
+<meta property="og:description" content="Explore PadVibe: instant playback, MIDI learn with RODECaster Pro support, mixer faders, per-pad output routing, level meters, a countdown timer and a local API.">
+<meta property="og:url" content="https://padvibe.pro26.in/features/">
+<meta property="og:image" content="https://padvibe.pro26.in/assets/og/features.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PadVibe: colourful sound pads, mixer faders and level meters">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PadVibe Features: MIDI Learn, Faders, Output Routing &amp; API">
+<meta name="twitter:description" content="Explore PadVibe: instant playback, MIDI learn with RODECaster Pro support, mixer faders, per-pad output routing, level meters, a countdown timer and a local API.">
+<meta name="twitter:image" content="https://padvibe.pro26.in/assets/og/features.png">
+<script>(function(){var t=null;try{t=localStorage.getItem('pv-theme')}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t)})()</script>
+<link rel="preload" href="/assets/site.dc52f754ee.css" as="style">
+<link rel="stylesheet" href="/assets/site.dc52f754ee.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://padvibe.pro26.in/"},{"@type":"ListItem","position":2,"name":"Features","item":"https://padvibe.pro26.in/features/"}]}</script>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="announce" id="announce" data-id="1.10"><div class="container"><span><span class="long">PadVibe 1.10 is out: faster startup, a redesigned interface, and Windows and Linux builds.</span><span class="short">PadVibe 1.10 is out.</span> <a href="/changelog/">See what's new</a></span><button type="button" aria-label="Dismiss announcement">&times;</button></div></div>
+<header class="site-header"><div class="container">
+<a class="brand" href="/" aria-label="PadVibe home"><img src="/assets/icons/logo-mark.svg" width="34" height="23" alt="">PadVibe</a>
+<nav class="nav" id="nav" aria-label="Main" data-open="false"><a href="/features/" aria-current="page">Features</a><a href="/use-cases/">Use cases</a><a href="/developers/">Developers</a><a href="/changelog/">Changelog</a><a href="https://github.com/shabeer-wms/padvibe" rel="noopener">GitHub</a></nav>
+<div class="header-actions">
+<a class="btn btn-primary btn-sm" href="/download/">Download</a>
+<button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light and dark theme"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.900 4.900l1.400 1.400m11.400 11.400 1.400 1.400M2 12h2m16 0h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
+<button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+</div></div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Features</span></nav>
+<h1>Features</h1>
+<p class="lead">PadVibe is a pad-based soundboard with the controls live audio work needs: fast playback, hardware control, routing and an API.</p></div></section>
+<section class="section"><div class="container"><div class="split"><div><span class="eyebrow">Playback</span><h2>Fast, predictable playback</h2><p style="color:var(--muted)">Each file is decoded once and kept in memory, so triggering a pad does not wait on disk or on decoding. Playback and the waveform share the same decoded audio.</p><ul class="checks"><li><strong>Play, pause, resume, loop and seek</strong> on every pad, with a short fade-in that avoids clicks.</li><li><strong>Per-pad volume</strong> and a <strong>master volume</strong>, with a soft limiter on the master bus.</li><li><strong>Waveforms</strong> drawn on every pad, so you can see where you are.</li><li><strong>MP3, WAV, OGG and FLAC</strong>, including very long files, which stream from disk.</li><li>Stops are immediate and the audio engine stays responsive when you hit pads quickly.</li></ul></div><div><div class="window"><div class="window-bar"><i></i><i></i><i></i><span>PadVibe</span></div><img class="shot-dark" src="/assets/img/app-home-dark.webp" srcset="/assets/img/app-home-dark-720.webp 720w, /assets/img/app-home-dark.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="900" alt="PadVibe pad grid with waveforms and a playing pad" loading="lazy" decoding="async"><img class="shot-light" src="/assets/img/app-home-light.webp" srcset="/assets/img/app-home-light-720.webp 720w, /assets/img/app-home-light.webp 1440w" sizes="(max-width: 760px) 100vw, 1440px" width="1440" height="900" alt="PadVibe pad grid with waveforms and a playing pad" loading="lazy" decoding="async"></div></div></div></div></section>
+<section class="section"><div class="container"><div class="split rev"><div><span class="eyebrow">Control</span><h2>Play it however your hands prefer</h2><p style="color:var(--muted)">Pads respond to the mouse, the keyboard and MIDI. Everything for a pad is in a single Pad settings dialog with three tabs: Playback, Triggers and Output.</p><ul class="checks"><li><strong>Keyboard keys</strong>: press the key to play, hold Shift to stop.</li><li><strong>MIDI learn</strong>: press Learn, then hit a pad or button on your controller. Notes, control changes and program change messages all work.</li><li><strong>RODECaster Pro support</strong>: channel-aware trigger IDs, so pads on different MIDI channels stay separate.</li><li><strong>Mixer faders</strong>: create faders, link groups of pads to them, and map each to a hardware slider.</li></ul></div><div><div class="window"><div class="window-bar"><i></i><i></i><i></i><span>PadVibe</span></div><img class="shot-dark" src="/assets/img/app-pad-settings-dark.webp" width="640" height="470" alt="Pad settings dialog, Triggers tab" loading="lazy" decoding="async"><img class="shot-light" src="/assets/img/app-pad-settings-light.webp" width="640" height="470" alt="Pad settings dialog, Triggers tab" loading="lazy" decoding="async"></div></div></div></div></section>
+<section class="section"><div class="narrow"><div><span class="eyebrow">Routing</span><h2>Send each pad where it belongs</h2><p style="color:var(--muted)">Choose an output device for the whole app, then override it per pad. On a multi-channel interface you can pick the exact output channels for each pad.</p><ul class="checks"><li><strong>Per-pad output device</strong>: effects to the monitors, music to the stream.</li><li><strong>Channel mapping</strong> for interfaces with more than two outputs.</li><li><strong>Virtual devices</strong> such as BlackHole or VB-Cable let you feed PadVibe into OBS, Zoom or a DAW.</li><li>If a device changes while the app is open, PadVibe re-resolves it and falls back to your system default instead of going silent.</li></ul></div></div></section>
+<section class="section"><div class="narrow"><div><span class="eyebrow">Show tools</span><h2>Built for running a show</h2><p style="color:var(--muted)">A few small things make a big difference when you are live.</p><ul class="checks"><li><strong>Tabs</strong> for scenes, episodes or segments, each with its own pads.</li><li><strong>Countdown timer</strong> that shows how much of the playing audio is left, with a detachable floating window.</li><li><strong>Background pads</strong> for long beds, kept out of the timer and the API.</li><li><strong>Level meters</strong> with independent left and right peak and RMS.</li><li><strong>Light and dark themes</strong> that follow your system.</li><li>A <strong>responsive layout</strong>: the mixer tucks into a side panel when the window is narrow.</li></ul></div></div></section>
+<section class="section"><div class="narrow"><div><span class="eyebrow">Integration</span><h2>Connect it to the rest of your setup</h2><p style="color:var(--muted)">PadVibe exposes what is happening, and lets other tools drive it. See the <a href='/developers/'>developer docs</a> for every endpoint.</p><ul class="checks"><li><strong>Local HTTP API</strong> on port 9696: state, levels, timer, play, stop, volume, seek, tabs, faders, audio and MIDI devices.</li><li><strong>Webhook</strong>: PadVibe posts its full state as JSON to a URL you choose, about once a second.</li><li><strong>Timer overlay</strong>: a ready-made page for an OBS Browser Source, fed by a WebSocket.</li><li>Works with anything that can open a URL, including automation tools and button decks.</li></ul></div></div></section>
+<section class="section"><div class="narrow"><div><span class="eyebrow">Reliability</span><h2>An engine that looks after itself</h2><p style="color:var(--muted)">PadVibe runs its audio and MIDI in a separate background process, so a problem there cannot freeze the interface.</p><ul class="checks"><li>If the audio engine stops responding, PadVibe restarts it and reconnects automatically.</li><li>Detailed logs are written for every launch, with crash dumps, so problems are easy to diagnose.</li><li>Your files are copied into PadVibe's own library: moving or renaming the original never breaks a pad. Clearing a pad cleans up its copy.</li><li>No network access is needed to use it.</li></ul></div></div></section>
+<section class="section"><div class="container"><div class="cta-band">
+<h2>Free to download. Ready in a minute.</h2><p>No account, no subscription, no tracking. Install it, drop in a few sounds and hit a pad.</p>
+<div class="cta-row"><a class="btn btn-primary btn-lg" href="/download/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg> Download PadVibe</a><a class="btn btn-lg" href="https://github.com/shabeer-wms/padvibe" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Star on GitHub</a></div>
+</div></div></section>
+</main>
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div><a class="brand" href="/"><img src="/assets/icons/logo-mark.svg" width="34" height="23" alt="">PadVibe</a>
+<p class="footer-note">A free, open source soundboard for podcasters, streamers and live shows. macOS, Windows and Linux.</p></div>
+<div><h4>Product</h4><ul><li><a href="/features/">Features</a></li><li><a href="/download/">Download</a></li><li><a href="/changelog/">Changelog</a></li><li><a href="/press/">Press kit</a></li></ul></div>
+<div><h4>Use cases</h4><ul><li><a href="/use-cases/podcasting/">Podcasting</a></li><li><a href="/use-cases/streaming/">Streaming</a></li><li><a href="/use-cases/theatre/">Theatre and live events</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="/developers/">Local API</a></li><li><a href="https://github.com/shabeer-wms/padvibe" rel="noopener">GitHub</a></li><li><a href="https://github.com/shabeer-wms/padvibe/issues" rel="noopener">Report an issue</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; <span data-year>2026</span> PadVibe. Made for creators.</span><span>Not affiliated with RODE, Apple, Microsoft or the Linux Foundation. Product names belong to their owners.</span></div>
+</div></footer>
+<script src="/assets/site.4065edfec7.js" defer></script>
+</body>
+</html>

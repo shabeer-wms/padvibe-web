@@ -1,0 +1,16 @@
+# PadVibe
+
+> PadVibe is a free, open source desktop soundboard for macOS, Windows and Linux. Users drop audio files (MP3, WAV, OGG, FLAC) onto pads and play them with a click, a keyboard key, a MIDI controller or an HTTP request. It has MIDI learn (including RODECaster Pro pads), mixer faders, per-pad output device and channel routing, level meters, a countdown timer and a local HTTP API.
+
+## Pages
+- [Home](https://padvibe.pro26.in/): overview and a playable demo
+- [Features](https://padvibe.pro26.in/features/): what PadVibe can do
+- [Download](https://padvibe.pro26.in/download/): installers for macOS, Windows and Linux, and a Homebrew command
+- [Local API](https://padvibe.pro26.in/developers/): HTTP endpoints, webhook, WebSocket timer and OBS overlay
+- [Podcasting](https://padvibe.pro26.in/use-cases/podcasting/), [Streaming](https://padvibe.pro26.in/use-cases/streaming/), [Theatre and live events](https://padvibe.pro26.in/use-cases/theatre/)
+- [Changelog](https://padvibe.pro26.in/changelog/)
+- [Source code](https://github.com/shabeer-wms/padvibe)
+
+## Facts
+- Price: free, no account. Platforms: macOS (Apple Silicon and Intel), Windows 10/11, Linux.
+- Not a recorder and not a cue-list sequencer: it is a pad-based sound player.
